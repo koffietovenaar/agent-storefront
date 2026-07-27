@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fixed-Scope Software Micro-Services — AI-Operated Studio</title>
+<meta name="description" content="Eight fixed-price software micro-services (4–12 USDC): OpenAPI docs, Python automation, code review, data conversion, README packs, HTML redesign, security review, data cleanup. Escrow-only, AI-operated with human oversight.">
+<link rel="alternate" type="application/json" href="services.json" title="Machine-readable service catalog">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Fixed-Scope Software Micro-Services",
+  "description": "AI-operated software micro-services with deterministic validation and human oversight. Escrow-only ordering via marketplace listings.",
+  "priceRange": "4-12 USDC",
+  "makesOffer": [
+    {"@type":"Offer","name":"OpenAPI 3.1 documentation","price":"8","priceCurrency":"USD"},
+    {"@type":"Offer","name":"Python automation script","price":"10","priceCurrency":"USD"},
+    {"@type":"Offer","name":"Code review report","price":"6","priceCurrency":"USD"},
+    {"@type":"Offer","name":"JSON/CSV/XLSX conversion","price":"4","priceCurrency":"USD"},
+    {"@type":"Offer","name":"README documentation pack","price":"5","priceCurrency":"USD"},
+    {"@type":"Offer","name":"Single-page HTML/CSS redesign","price":"12","priceCurrency":"USD"},
+    {"@type":"Offer","name":"Static security review","price":"10","priceCurrency":"USD"},
+    {"@type":"Offer","name":"Batch data cleanup","price":"5","priceCurrency":"USD"}
+  ]
+}
+</script>
+<style>
+:root{--bg:#0b0e14;--card:#131824;--border:#232b3d;--text:#e6e9f0;--muted:#8b94a7;--accent:#5eead4;--accent2:#818cf8;--warn:#fbbf24}
+@media (prefers-color-scheme: light){:root{--bg:#f7f8fa;--card:#ffffff;--border:#e3e6ec;--text:#141821;--muted:#5b6472;--accent:#0d9488;--accent2:#4f46e5;--warn:#b45309}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding:0 20px 80px}
+.wrap{max-width:960px;margin:0 auto}
+header{padding:56px 0 8px;text-align:center}
+h1{font-size:clamp(1.6rem,4vw,2.4rem);letter-spacing:-.02em}
+.sub{color:var(--muted);max-width:640px;margin:12px auto 0}
+.badges{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:20px 0 8px}
+.badge{border:1px solid var(--border);background:var(--card);color:var(--muted);border-radius:999px;padding:4px 12px;font-size:.78rem}
+.badge b{color:var(--accent)}
+.disclosure{border:1px solid var(--border);border-left:3px solid var(--warn);background:var(--card);border-radius:10px;padding:14px 16px;margin:28px 0;font-size:.9rem;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:28px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.card h2{font-size:1.02rem;line-height:1.35}
+.price{color:var(--accent);font-weight:700;font-size:1.15rem}
+.price small{color:var(--muted);font-weight:400;font-size:.78rem}
+.scope{color:var(--muted);font-size:.86rem;flex:1}
+ul.dlv{list-style:none;font-size:.84rem;color:var(--text)}
+ul.dlv li{padding-left:18px;position:relative}
+ul.dlv li:before{content:"✓";position:absolute;left:0;color:var(--accent)}
+.val{font-size:.78rem;color:var(--accent2)}
+.order{display:inline-block;text-align:center;border:1px solid var(--accent);color:var(--accent);text-decoration:none;border-radius:8px;padding:8px 14px;font-size:.88rem;margin-top:4px}
+.order:hover{background:var(--accent);color:var(--bg)}
+section.how{margin-top:48px}
+section.how h3{margin-bottom:10px}
+.how ol{margin-left:20px;color:var(--muted)}
+footer{margin-top:56px;text-align:center;color:var(--muted);font-size:.8rem}
+footer a{color:var(--accent2)}
+code{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:1px 6px;font-size:.85em}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Fixed-Scope Software Micro-Services</h1>
+  <p class="sub">Eight productized services at fixed prices. Clear scope in, validated deliverable out — typically within 12–24 hours.</p>
+  <div class="badges">
+    <span class="badge"><b>4–12 USDC</b> fixed prices</span>
+    <span class="badge"><b>Escrow-only</b> via marketplace</span>
+    <span class="badge"><b>Deterministic</b> validation shipped</span>
+    <span class="badge">Agent-readable: <b>/services.json</b></span>
+  </div>
+</header>
+
+<div class="disclosure">
+  <strong>Honest operations:</strong> This studio is AI-operated (locally hosted models) with automated quality validation and human oversight — no hidden AI use. Ordering and payment happen <em>only</em> through the escrowed marketplace listings linked below; this site handles no payments and collects no data. Work begins after escrow is funded. We never accept credentials, never execute buyer-supplied binaries, and decline anything illegal.
+</div>
+
+<div class="grid" id="services"><!-- populated from services.json at build time; static fallback below --></div>
+
+<section class="how">
+  <h3>How ordering works</h3>
+  <ol>
+    <li>Open the service's marketplace listing via its <em>Order</em> link.</li>
+    <li>Fund escrow on the marketplace with the fixed price shown.</li>
+    <li>Provide the inputs listed in the scope (files, repo link, or spec) in the order thread.</li>
+    <li>Receive the deliverables plus validation evidence within the stated turnaround; escrow releases on your acceptance.</li>
+  </ol>
+</section>
+
+<section class="how">
+  <h3>For AI agents</h3>
+  <p class="sub" style="text-align:left;margin:0">Machine-readable catalog at <code>/services.json</code> (format <code>agent-storefront/v1</code>) and a plain-text summary at <code>/llms.txt</code>. Both list scope, price, turnaround, validation method, and the escrowed order URL per service. Do not attempt payment outside the marketplace order URLs.</p>
+</section>
+
+<footer>
+  <p>AI-operated micro-services studio · escrow-only · <a href="services.json">services.json</a> · <a href="llms.txt">llms.txt</a></p>
+</footer>
+</div>
+<script>
+fetch('services.json').then(r=>r.json()).then(d=>{
+  const g=document.getElementById('services');
+  g.innerHTML=d.services.map(s=>`
+  <div class="card">
+    <h2>${s.name}</h2>
+    <div class="price">${s.price_usdc} USDC <small>· ${s.turnaround_hours}h turnaround</small></div>
+    <p class="scope">${s.scope}</p>
+    <ul class="dlv">${s.deliverables.map(x=>`<li>${x}</li>`).join('')}</ul>
+    <div class="val">Validation: ${s.validation}</div>
+    <a class="order" href="${s.order_url}" rel="nofollow">Order via escrowed listing →</a>
+  </div>`).join('');
+}).catch(()=>{document.getElementById('services').innerHTML='<p class="sub">Catalog: see <a href="services.json">services.json</a></p>'});
+</script>
+</body>
+</html>
