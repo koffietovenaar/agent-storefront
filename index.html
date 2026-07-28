@@ -3,25 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fixed-Scope Software Micro-Services — AI-Operated Studio</title>
-<meta name="description" content="Eight fixed-price software micro-services (4–12 USDC): OpenAPI docs, Python automation, code review, data conversion, README packs, HTML redesign, security review, data cleanup. Escrow-only, AI-operated with human oversight.">
+<title>Koffie Labs — Fixed-Scope AI Software Services</title>
+<meta name="description" content="Eight fixed-price software services from $15 to $35: OpenAPI docs, Python automation, code review, data conversion, README packs, HTML redesign, security review, and data cleanup. Order securely through Contra.">
 <link rel="alternate" type="application/json" href="services.json" title="Machine-readable service catalog">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "Fixed-Scope Software Micro-Services",
-  "description": "AI-operated software micro-services with deterministic validation and human oversight. Escrow-only ordering via marketplace listings.",
-  "priceRange": "4-12 USDC",
+  "name": "Koffie Labs AI Software Studio",
+  "url": "https://koffietovenaar.github.io/agent-storefront/",
+  "description": "AI-assisted software micro-services with deterministic validation and human review. Ordering through Contra.",
+  "priceRange": "$15-$35",
   "makesOffer": [
-    {"@type":"Offer","name":"OpenAPI 3.1 documentation","price":"8","priceCurrency":"USD"},
-    {"@type":"Offer","name":"Python automation script","price":"10","priceCurrency":"USD"},
-    {"@type":"Offer","name":"Code review report","price":"6","priceCurrency":"USD"},
-    {"@type":"Offer","name":"JSON/CSV/XLSX conversion","price":"4","priceCurrency":"USD"},
-    {"@type":"Offer","name":"README documentation pack","price":"5","priceCurrency":"USD"},
-    {"@type":"Offer","name":"Single-page HTML/CSS redesign","price":"12","priceCurrency":"USD"},
-    {"@type":"Offer","name":"Static security review","price":"10","priceCurrency":"USD"},
-    {"@type":"Offer","name":"Batch data cleanup","price":"5","priceCurrency":"USD"}
+    {"@type":"Offer","name":"OpenAPI 3.1 documentation","price":"25","priceCurrency":"USD"},
+    {"@type":"Offer","name":"Python automation script","price":"30","priceCurrency":"USD"},
+    {"@type":"Offer","name":"Code review report","price":"20","priceCurrency":"USD"},
+    {"@type":"Offer","name":"JSON/CSV/XLSX conversion","price":"15","priceCurrency":"USD"},
+    {"@type":"Offer","name":"README documentation pack","price":"18","priceCurrency":"USD"},
+    {"@type":"Offer","name":"Single-page HTML/CSS redesign","price":"35","priceCurrency":"USD"},
+    {"@type":"Offer","name":"Static security review","price":"30","priceCurrency":"USD"},
+    {"@type":"Offer","name":"Batch data cleanup","price":"15","priceCurrency":"USD"}
   ]
 }
 </script>
@@ -49,30 +50,43 @@ ul.dlv li{padding-left:18px;position:relative}
 ul.dlv li:before{content:"✓";position:absolute;left:0;color:var(--accent)}
 .val{font-size:.78rem;color:var(--accent2)}
 .order{display:inline-block;text-align:center;border:1px solid var(--accent);color:var(--accent);text-decoration:none;border-radius:8px;padding:8px 14px;font-size:.88rem;margin-top:4px}
-.order:hover{background:var(--accent);color:var(--bg)}
+.order:hover,.order:focus-visible{background:var(--accent);color:var(--bg)}
+.order:focus-visible,.profile-link:focus-visible{outline:3px solid var(--accent2);outline-offset:3px}
+.profile-cta{display:flex;align-items:center;justify-content:space-between;gap:18px;border:1px solid var(--border);background:linear-gradient(135deg,var(--card),transparent);border-radius:14px;padding:18px 20px;margin:22px 0 8px}
+.profile-cta p{color:var(--muted);font-size:.9rem}
+.profile-link{display:inline-block;white-space:nowrap;background:var(--accent);color:var(--bg);font-weight:750;text-decoration:none;border-radius:9px;padding:10px 16px}
 section.how{margin-top:48px}
 section.how h3{margin-bottom:10px}
 .how ol{margin-left:20px;color:var(--muted)}
 footer{margin-top:56px;text-align:center;color:var(--muted);font-size:.8rem}
 footer a{color:var(--accent2)}
 code{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:1px 6px;font-size:.85em}
+@media(max-width:560px){body{padding-inline:14px}.profile-cta{align-items:stretch;flex-direction:column}.profile-link{text-align:center}.card{padding:17px}}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header>
-  <h1>Fixed-Scope Software Micro-Services</h1>
-  <p class="sub">Eight productized services at fixed prices. Clear scope in, validated deliverable out — typically within 12–24 hours.</p>
+  <h1>Koffie Labs</h1>
+  <p class="sub">Eight fixed-scope AI software services. Clear scope in, validated and human-reviewed deliverable out — typically within 12–24 hours.</p>
   <div class="badges">
-    <span class="badge"><b>4–12 USDC</b> fixed prices</span>
-    <span class="badge"><b>Escrow-only</b> via marketplace</span>
+    <span class="badge"><b>$15–$35</b> fixed prices</span>
+    <span class="badge"><b>Protected ordering</b> through Contra</span>
     <span class="badge"><b>Deterministic</b> validation shipped</span>
     <span class="badge">Agent-readable: <b>/services.json</b></span>
   </div>
 </header>
 
 <div class="disclosure">
-  <strong>Honest operations:</strong> This studio is AI-operated (locally hosted models) with automated quality validation and human oversight — no hidden AI use. Ordering and payment happen <em>only</em> through the escrowed marketplace listings linked below; this site handles no payments and collects no data. Work begins after escrow is funded. We never accept credentials, never execute buyer-supplied binaries, and decline anything illegal.
+  <strong>Honest operations:</strong> This studio uses AI assistance with automated quality checks and human review — never hidden. Ordering and payment happen <em>only</em> through the published Contra services linked below; this site handles no payments and collects no data. Work begins after Contra confirms the order. We never accept credentials, never execute buyer-supplied binaries, and decline anything illegal.
+</div>
+
+<div class="profile-cta">
+  <div>
+    <strong>Prefer to browse the full profile?</strong>
+    <p>See all services, portfolio work, and contact options on the verified human order channel.</p>
+  </div>
+  <a class="profile-link" href="https://contra.com/merlijn_linders_1jdz2ean" rel="me">Open Contra profile →</a>
 </div>
 
 <div class="grid" id="services"><!-- populated from services.json at build time; static fallback below --></div>
@@ -81,7 +95,7 @@ code{background:var(--card);border:1px solid var(--border);border-radius:6px;pad
   <h3>How ordering works</h3>
   <ol>
     <li>Open the service's marketplace listing via its <em>Order</em> link.</li>
-    <li>Fund escrow on the marketplace with the fixed price shown.</li>
+    <li>Place the fixed-price order through Contra.</li>
     <li>Provide the inputs listed in the scope (files, repo link, or spec) in the order thread.</li>
     <li>Receive the deliverables plus validation evidence within the stated turnaround; escrow releases on your acceptance.</li>
   </ol>
@@ -102,11 +116,11 @@ fetch('services.json').then(r=>r.json()).then(d=>{
   g.innerHTML=d.services.map(s=>`
   <div class="card">
     <h2>${s.name}</h2>
-    <div class="price">${s.price_usdc} USDC <small>· ${s.turnaround_hours}h turnaround</small></div>
+    <div class="price">$${s.price_usd} USD <small>· ${s.turnaround_hours}h turnaround</small></div>
     <p class="scope">${s.scope}</p>
     <ul class="dlv">${s.deliverables.map(x=>`<li>${x}</li>`).join('')}</ul>
     <div class="val">Validation: ${s.validation}</div>
-    <a class="order" href="${s.order_url}" rel="nofollow">Order via escrowed listing →</a>
+    <a class="order" href="${s.order_url}" rel="nofollow">Order on Contra →</a>
   </div>`).join('');
 }).catch(()=>{document.getElementById('services').innerHTML='<p class="sub">Catalog: see <a href="services.json">services.json</a></p>'});
 </script>

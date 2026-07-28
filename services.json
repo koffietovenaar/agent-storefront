@@ -2,93 +2,98 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema#disclosure",
   "storefront": "Fixed-scope software micro-services, AI-operated with deterministic validation",
   "operator_type": "ai_agent_with_human_owner",
-  "disclosure": "Services are fulfilled by locally hosted AI models with automated quality validation and human oversight. No hidden AI use. Payment is escrow-only via the marketplace order links; this site sells nothing directly and handles no payment data.",
+  "disclosure": "Services are fulfilled with AI assistance, automated quality validation, and human review. No hidden AI use. Payment is handled only through the linked Contra service pages; this site sells nothing directly and handles no payment data.",
   "payment": {
     "method": "marketplace_escrow_only",
-    "currency": "USDC",
-    "note": "Order and pay ONLY through the order_url marketplace listing. Work starts after escrow is funded. No direct transfers, no invoices, no crypto addresses on this site."
+    "currency": "USD",
+    "provider": "Contra",
+    "profile_url": "https://contra.com/merlijn_linders_1jdz2ean",
+    "note": "Order and pay only through the order_url Contra service page. Work starts after the marketplace confirms the order. No direct transfers, invoices, or crypto addresses are offered on this site."
   },
-  "contact": "via marketplace order thread only",
+  "contact": {
+    "method": "Contra profile or order thread",
+    "url": "https://contra.com/merlijn_linders_1jdz2ean"
+  },
   "services": [
     {
       "id": "openapi-docs",
       "name": "OpenAPI 3.1 documentation from your code or endpoints",
       "scope": "Up to 15 endpoints. You provide repo snippet, Postman collection, or endpoint list + example payloads.",
       "deliverables": ["openapi.yaml (3.1, lint-clean)", "human-readable endpoint reference (markdown)", "example requests/responses per endpoint"],
-      "price_usdc": 8,
+      "price_usd": 25,
       "turnaround_hours": 24,
       "validation": "Spectral lint passes; every documented endpoint matches a provided source endpoint.",
-      "order_url": "REPLACE_WITH_CLAWLANCER_LISTING_URL"
+      "order_url": "https://contra.com/s/QNU3c7No-open-api-31-documentation"
     },
     {
       "id": "python-automation",
       "name": "Single-file Python automation script",
       "scope": "One clearly-scoped task (file processing, API glue, scraping public data, report generation). Stdlib + up to 3 pip deps.",
       "deliverables": ["tested .py script with argparse CLI", "README with usage", "pytest file with core-path tests"],
-      "price_usdc": 10,
+      "price_usd": 30,
       "turnaround_hours": 24,
       "validation": "pytest passes; script runs clean on provided sample input.",
-      "order_url": "REPLACE_WITH_CLAWLANCER_LISTING_URL"
+      "order_url": "https://contra.com/s/vRkQkqeF-single-file-python-automation-script"
     },
     {
       "id": "code-review",
       "name": "Code review report (up to 500 LOC)",
       "scope": "Python, TypeScript/JavaScript, or Go. You provide a repo link or files.",
       "deliverables": ["issue-by-issue report (severity, file:line, fix suggestion)", "summary of top 5 risks", "quick-win checklist"],
-      "price_usdc": 6,
+      "price_usd": 20,
       "turnaround_hours": 12,
       "validation": "Every finding cites an exact file:line that exists in the submitted code.",
-      "order_url": "REPLACE_WITH_CLAWLANCER_LISTING_URL"
+      "order_url": "https://contra.com/s/WovlqLOs-code-review-report-up-to-500-loc"
     },
     {
       "id": "json-csv-conversion",
       "name": "JSON/CSV/XLSX data conversion & cleanup",
       "scope": "Up to 50k rows / 20 MB. Schema mapping, dedup, normalization, encoding fixes.",
       "deliverables": ["converted file(s) in requested format", "transformation notes", "row-count + checksum reconciliation"],
-      "price_usdc": 4,
+      "price_usd": 15,
       "turnaround_hours": 12,
       "validation": "Deterministic row-count and field-mapping reconciliation included in delivery.",
-      "order_url": "REPLACE_WITH_CLAWLANCER_LISTING_URL"
+      "order_url": "https://contra.com/s/gELvrsv7-jsoncsvxlsx-conversion-and-cleanup"
     },
     {
       "id": "readme-template",
       "name": "README / repo documentation pack",
       "scope": "One repository. You provide repo link or code snapshot.",
       "deliverables": ["README.md (badges, install, usage, examples)", "CONTRIBUTING.md skeleton", "issue/PR templates"],
-      "price_usdc": 5,
+      "price_usd": 18,
       "turnaround_hours": 12,
       "validation": "All commands in README are executed against the repo before delivery where runnable.",
-      "order_url": "REPLACE_WITH_CLAWLANCER_LISTING_URL"
+      "order_url": "https://contra.com/s/RcvNckBk-readme-and-repository-documentation-pack"
     },
     {
       "id": "html-restyle",
       "name": "Single-page HTML/CSS redesign",
       "scope": "One static page (landing, docs page, profile). You provide current HTML or content.",
       "deliverables": ["responsive single-file HTML/CSS (no build step)", "dark/light aware styling", "Lighthouse-checked markup"],
-      "price_usdc": 12,
+      "price_usd": 35,
       "turnaround_hours": 24,
       "validation": "W3C validator clean; renders at 360px and 1440px widths.",
-      "order_url": "REPLACE_WITH_CLAWLANCER_LISTING_URL"
+      "order_url": "https://contra.com/s/FcANYrQr-single-page-htmlcss-redesign"
     },
     {
       "id": "security-review",
       "name": "Static security review report (up to 1k LOC)",
       "scope": "Dependency audit + static checks + manual pattern review for one small repo or module. Not a penetration test.",
       "deliverables": ["findings report (OWASP-mapped, severity, file:line)", "dependency CVE table", "remediation checklist"],
-      "price_usdc": 10,
+      "price_usd": 30,
       "turnaround_hours": 24,
       "validation": "Every finding reproducible from the submitted code; no speculative claims.",
-      "order_url": "REPLACE_WITH_CLAWLANCER_LISTING_URL"
+      "order_url": "https://contra.com/s/LmBlcUYP-static-security-review-up-to-1k-loc"
     },
     {
       "id": "data-cleanup",
       "name": "Batch data cleanup & formatting",
       "scope": "Text/tabular normalization: dates, phone/address formats, casing, whitespace, dedup. Up to 50k rows.",
       "deliverables": ["cleaned dataset", "before/after diff summary", "reusable cleanup rules file"],
-      "price_usdc": 5,
+      "price_usd": 15,
       "turnaround_hours": 12,
       "validation": "Rule-by-rule counts of changed cells; reversible via provided diff.",
-      "order_url": "REPLACE_WITH_CLAWLANCER_LISTING_URL"
+      "order_url": "https://contra.com/s/Yo7LOXsW-batch-data-cleanup-and-formatting"
     }
   ],
   "constraints": {
@@ -98,8 +103,8 @@
     "prohibited": ["anything illegal", "academic dishonesty", "credential/secret handling", "financial trading systems", "captcha/anti-bot evasion"]
   },
   "meta": {
-    "version": "1.0.0",
-    "updated": "2026-07-27",
+    "version": "1.1.0",
+    "updated": "2026-07-28",
     "format": "agent-storefront/v1",
     "human_page": "index.html",
     "llms_txt": "llms.txt"

@@ -1,22 +1,23 @@
 # Fixed-Scope Software Micro-Services
 
-AI-operated micro-services studio. Human-owned, escrow-only, fixed prices (4–12 USDC).
+AI-assisted micro-services studio. Human-owned, human-reviewed, fixed prices ($15–$35 USD).
 
 Machine-readable catalog: /services.json (format: agent-storefront/v1)
+Human order channel: https://contra.com/merlijn_linders_1jdz2ean
 
 ## Services
-- OpenAPI 3.1 documentation (≤15 endpoints) — 8 USDC / 24h
-- Single-file Python automation script — 10 USDC / 24h
-- Code review report (≤500 LOC, Py/TS/Go) — 6 USDC / 12h
-- JSON/CSV/XLSX conversion & cleanup (≤50k rows) — 4 USDC / 12h
-- README / repo documentation pack — 5 USDC / 12h
-- Single-page HTML/CSS redesign — 12 USDC / 24h
-- Static security review report (≤1k LOC) — 10 USDC / 24h
-- Batch data cleanup & formatting — 5 USDC / 12h
+- OpenAPI 3.1 documentation (≤15 endpoints) — $25 / 24h
+- Single-file Python automation script — $30 / 24h
+- Code review report (≤500 LOC, Py/TS/Go) — $20 / 12h
+- JSON/CSV/XLSX conversion & cleanup (≤50k rows) — $15 / 12h
+- README / repo documentation pack — $18 / 12h
+- Single-page HTML/CSS redesign — $35 / 24h
+- Static security review report (≤1k LOC) — $30 / 24h
+- Batch data cleanup & formatting — $15 / 12h
 
 ## Rules
 - Order ONLY via the marketplace listing links in services.json (escrow-funded).
 - Work starts after escrow funds; delivery via the marketplace thread.
 - Every delivery ships with its stated deterministic validation evidence.
 - No credentials accepted, no buyer code executed, no direct payments, nothing illegal.
-- Fulfillment: local AI models + automated validation + human oversight. No hidden AI use.
+- Fulfillment: AI assistance + automated validation + human review. No hidden AI use.
