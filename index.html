@@ -5,7 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Koffie Labs — Fixed-Scope AI Software Services</title>
 <meta name="description" content="Eight fixed-price software services from $15 to $35: OpenAPI docs, Python automation, code review, data conversion, README packs, HTML redesign, security review, and data cleanup. Order securely through Contra.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#0b0e14" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f7f8fa" media="(prefers-color-scheme: light)">
+<link rel="canonical" href="https://koffietovenaar.github.io/agent-storefront/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="alternate" type="application/json" href="services.json" title="Machine-readable service catalog">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Koffie Labs">
+<meta property="og:title" content="Koffie Labs — Fixed-Scope AI Software Services">
+<meta property="og:description" content="Eight fixed-price, human-reviewed software services from $15 to $35. Browse the scope, validation, turnaround, and direct Contra order link for each service.">
+<meta property="og:url" content="https://koffietovenaar.github.io/agent-storefront/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Koffie Labs — Fixed-Scope AI Software Services">
+<meta name="twitter:description" content="Eight fixed-price, human-reviewed software services from $15 to $35, ordered through Contra.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -14,15 +27,19 @@
   "url": "https://koffietovenaar.github.io/agent-storefront/",
   "description": "AI-assisted software micro-services with deterministic validation and human review. Ordering through Contra.",
   "priceRange": "$15-$35",
+  "sameAs": [
+    "https://contra.com/merlijn_linders_1jdz2ean",
+    "https://github.com/koffietovenaar"
+  ],
   "makesOffer": [
-    {"@type":"Offer","name":"OpenAPI 3.1 documentation","price":"25","priceCurrency":"USD"},
-    {"@type":"Offer","name":"Python automation script","price":"30","priceCurrency":"USD"},
-    {"@type":"Offer","name":"Code review report","price":"20","priceCurrency":"USD"},
-    {"@type":"Offer","name":"JSON/CSV/XLSX conversion","price":"15","priceCurrency":"USD"},
-    {"@type":"Offer","name":"README documentation pack","price":"18","priceCurrency":"USD"},
-    {"@type":"Offer","name":"Single-page HTML/CSS redesign","price":"35","priceCurrency":"USD"},
-    {"@type":"Offer","name":"Static security review","price":"30","priceCurrency":"USD"},
-    {"@type":"Offer","name":"Batch data cleanup","price":"15","priceCurrency":"USD"}
+    {"@type":"Offer","name":"OpenAPI 3.1 documentation","price":"25","priceCurrency":"USD","url":"https://contra.com/s/QNU3c7No-open-api-31-documentation"},
+    {"@type":"Offer","name":"Python automation script","price":"30","priceCurrency":"USD","url":"https://contra.com/s/vRkQkqeF-single-file-python-automation-script"},
+    {"@type":"Offer","name":"Code review report","price":"20","priceCurrency":"USD","url":"https://contra.com/s/WovlqLOs-code-review-report-up-to-500-loc"},
+    {"@type":"Offer","name":"JSON/CSV/XLSX conversion","price":"15","priceCurrency":"USD","url":"https://contra.com/s/gELvrsv7-jsoncsvxlsx-conversion-and-cleanup"},
+    {"@type":"Offer","name":"README documentation pack","price":"18","priceCurrency":"USD","url":"https://contra.com/s/RcvNckBk-readme-and-repository-documentation-pack"},
+    {"@type":"Offer","name":"Single-page HTML/CSS redesign","price":"35","priceCurrency":"USD","url":"https://contra.com/s/FcANYrQr-single-page-htmlcss-redesign"},
+    {"@type":"Offer","name":"Static security review","price":"30","priceCurrency":"USD","url":"https://contra.com/s/LmBlcUYP-static-security-review-up-to-1k-loc"},
+    {"@type":"Offer","name":"Batch data cleanup","price":"15","priceCurrency":"USD","url":"https://contra.com/s/Yo7LOXsW-batch-data-cleanup-and-formatting"}
   ]
 }
 </script>
@@ -56,7 +73,7 @@ ul.dlv li:before{content:"✓";position:absolute;left:0;color:var(--accent)}
 .profile-cta p{color:var(--muted);font-size:.9rem}
 .profile-link{display:inline-block;white-space:nowrap;background:var(--accent);color:var(--bg);font-weight:750;text-decoration:none;border-radius:9px;padding:10px 16px}
 section.how{margin-top:48px}
-section.how h3{margin-bottom:10px}
+section.how h2{margin-bottom:10px}
 .how ol{margin-left:20px;color:var(--muted)}
 footer{margin-top:56px;text-align:center;color:var(--muted);font-size:.8rem}
 footer a{color:var(--accent2)}
@@ -92,7 +109,7 @@ code{background:var(--card);border:1px solid var(--border);border-radius:6px;pad
 <div class="grid" id="services"><!-- populated from services.json at build time; static fallback below --></div>
 
 <section class="how">
-  <h3>How ordering works</h3>
+  <h2>How ordering works</h2>
   <ol>
     <li>Open the service's marketplace listing via its <em>Order</em> link.</li>
     <li>Place the fixed-price order through Contra.</li>

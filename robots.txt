@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://koffietovenaar.github.io/agent-storefront/sitemap.xml
