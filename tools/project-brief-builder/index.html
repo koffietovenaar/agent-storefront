@@ -61,6 +61,17 @@ button.secondary{background:var(--b);color:#fff}#result{min-height:260px;white-s
 <script>
 const byId=id=>document.getElementById(id);
 function clean(id,fallback){return byId(id).value.trim()||fallback}
+const requested=new URLSearchParams(location.search).get("service");
+if(requested){
+  const taskNames={
+    "openapi-docs":"OpenAPI documentation","python-automation":"Python automation",
+    "code-review":"Code review","json-csv-conversion":"JSON, CSV, or XLSX conversion",
+    "readme-template":"README and repository documentation",
+    "html-restyle":"Single-page HTML/CSS redesign",
+    "security-review":"Static security review","data-cleanup":"Batch data cleanup"
+  };
+  if(taskNames[requested])byId("service").value=taskNames[requested];
+}
 byId("build").addEventListener("click",()=>{
   byId("result").value=[
     "PROJECT BRIEF",
