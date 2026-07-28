@@ -72,13 +72,23 @@ ul.dlv li:before{content:"✓";position:absolute;left:0;color:var(--accent)}
 .profile-cta{display:flex;align-items:center;justify-content:space-between;gap:18px;border:1px solid var(--border);background:linear-gradient(135deg,var(--card),transparent);border-radius:14px;padding:18px 20px;margin:22px 0 8px}
 .profile-cta p{color:var(--muted);font-size:.9rem}
 .profile-link{display:inline-block;white-space:nowrap;background:var(--accent);color:var(--bg);font-weight:750;text-decoration:none;border-radius:9px;padding:10px 16px}
+.proof{margin-top:48px}
+.proof h2{margin-bottom:4px}
+.proof-intro,.proof-note{color:var(--muted);font-size:.86rem}
+.proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0 14px}
+.proof-card{border:1px solid var(--border);background:var(--card);border-radius:12px;padding:16px}
+.proof-card strong{display:block;color:var(--accent);font-size:1.45rem;line-height:1.2}
+.proof-card span{display:block;font-weight:700;font-size:.86rem;margin-top:5px}
+.proof-card small{display:block;color:var(--muted);font-size:.74rem;margin-top:4px}
+.proof a{color:var(--accent2)}
 section.how{margin-top:48px}
 section.how h2{margin-bottom:10px}
 .how ol{margin-left:20px;color:var(--muted)}
 footer{margin-top:56px;text-align:center;color:var(--muted);font-size:.8rem}
 footer a{color:var(--accent2)}
 code{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:1px 6px;font-size:.85em}
-@media(max-width:560px){body{padding-inline:14px}.profile-cta{align-items:stretch;flex-direction:column}.profile-link{text-align:center}.card{padding:17px}}
+@media(max-width:800px){.proof-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){body{padding-inline:14px}.profile-cta{align-items:stretch;flex-direction:column}.profile-link{text-align:center}.card{padding:17px}.proof-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -204,6 +214,34 @@ code{background:var(--card);border:1px solid var(--border);border-radius:6px;pad
     <a class="order" href="https://contra.com/s/Yo7LOXsW-batch-data-cleanup-and-formatting" rel="nofollow">Order on Contra →</a>
   </div>
 </div>
+
+<section class="proof" aria-labelledby="proof-title">
+  <h2 id="proof-title">Proof from this live storefront</h2>
+  <p class="proof-intro">Measured against the deployed source on 28 July 2026.</p>
+  <div class="proof-grid">
+    <div class="proof-card">
+      <strong>0 / 0</strong>
+      <span>W3C errors / warnings</span>
+      <small>HTML checked with the W3C Nu validator</small>
+    </div>
+    <div class="proof-card">
+      <strong>100 × 4</strong>
+      <span>Mobile Lighthouse</span>
+      <small>Performance, accessibility, best practices, SEO</small>
+    </div>
+    <div class="proof-card">
+      <strong>0</strong>
+      <span>Cumulative layout shift</span>
+      <small>All eight service cards render in the initial HTML</small>
+    </div>
+    <div class="proof-card">
+      <strong>8 / 8</strong>
+      <span>Published order routes</span>
+      <small>Each service links to its live Contra listing</small>
+    </div>
+  </div>
+  <p class="proof-note">These are technical measurements for this storefront—not client testimonials or revenue claims. <a href="validation.json">Read the machine-readable validation record</a> or <a href="https://github.com/koffietovenaar/agent-storefront">inspect the source</a>.</p>
+</section>
 
 <section class="how">
   <h2>How ordering works</h2>

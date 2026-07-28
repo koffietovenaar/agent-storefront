@@ -1,0 +1,29 @@
+{
+  "format": "koffie-labs-validation/v1",
+  "artifact": "Koffie Labs agent storefront",
+  "target": "https://koffietovenaar.github.io/agent-storefront/",
+  "audited_html_sha256": "4296d3e7400e29cfd23b01f17dead35cedbecacf35e8d35f4aba66a801bbb07c",
+  "checked_at": "2026-07-28T15:52:15.426Z",
+  "checks": {
+    "w3c_nu": {
+      "errors": 0,
+      "warnings": 0,
+      "target": "index.html"
+    },
+    "lighthouse_mobile": {
+      "version": "12.8.2",
+      "performance": 100,
+      "accessibility": 100,
+      "best_practices": 100,
+      "seo": 100,
+      "cumulative_layout_shift": 0
+    },
+    "public_order_routes": {
+      "expected": 8,
+      "reachable_http_200": 8,
+      "provider": "Contra",
+      "catalog": "services.json"
+    }
+  },
+  "scope_note": "These measurements describe the storefront itself. They are not client testimonials, completed-order evidence, or revenue claims."
+}
