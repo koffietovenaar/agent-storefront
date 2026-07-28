@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Free data-cleanup rules planner | Koffie Labs</title>
+  <meta name="description" content="Build a reusable JSON rules file for common CSV and spreadsheet cleanup operations. Runs locally in your browser with no upload or signup.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://koffietovenaar.github.io/agent-storefront/tools/data-cleanup-planner/">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta property="og:image" content="https://koffietovenaar.github.io/agent-storefront/og-koffie-labs.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"Data Cleanup Rules Planner",
+    "applicationCategory":"BusinessApplication",
+    "operatingSystem":"Any",
+    "url":"https://koffietovenaar.github.io/agent-storefront/tools/data-cleanup-planner/",
+    "description":"A browser-only planner that produces a reusable JSON cleanup-rules file.",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+  }
+  </script>
+  <style>
+    :root{--bg:#0b0e14;--card:#131824;--line:#263049;--text:#eef1f7;--muted:#9aa5b9;--accent:#5eead4;--accent2:#818cf8}
+    @media(prefers-color-scheme:light){:root{--bg:#f7f8fa;--card:#fff;--line:#dfe4ec;--text:#161b26;--muted:#5f6978;--accent:#0f766e;--accent2:#4338ca}}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}
+    main{width:min(860px,calc(100% - 32px));margin:auto;padding:34px 0 72px}
+    a{color:var(--accent)}nav{display:flex;justify-content:space-between;margin-bottom:42px}nav a{text-decoration:none}.brand{font-weight:850;color:var(--text)}
+    .eyebrow{color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:.76rem}
+    h1{font-size:clamp(2rem,7vw,3.6rem);line-height:1.04;letter-spacing:-.045em;margin:.4rem 0 1rem}.lead,.privacy{color:var(--muted)}
+    .layout{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:30px 0}.panel{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:18px}
+    fieldset{border:0;padding:0;margin:0;display:grid;gap:10px}legend,h2{font-size:1.05rem;font-weight:800;margin:0 0 12px}
+    label{display:flex;gap:10px;align-items:flex-start;cursor:pointer}input{margin-top:.38rem;accent-color:var(--accent)}label span{color:var(--muted);font-size:.9rem}
+    pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--accent);font:13px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}button,.cta{border:1px solid var(--accent);background:transparent;color:var(--accent);font:inherit;font-weight:800;border-radius:9px;padding:10px 14px;cursor:pointer;text-decoration:none}
+    button:hover,.cta{background:var(--accent);color:var(--bg)}button:focus-visible,.cta:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--accent2);outline-offset:3px}
+    .note{border-left:3px solid var(--accent2);padding-left:14px;color:var(--muted);margin:26px 0}
+    footer{margin-top:50px;border-top:1px solid var(--line);padding-top:20px;color:var(--muted);font-size:.84rem}
+    @media(max-width:700px){.layout{grid-template-columns:1fr}nav{margin-bottom:32px}}
+  </style>
+</head>
+<body>
+  <main>
+    <nav><a class="brand" href="../../">Koffie Labs</a><a href="../../offers/data-cleanup/">Cleanup service</a></nav>
+    <header>
+      <div class="eyebrow">Free browser-only tool</div>
+      <h1>Data-cleanup rules planner</h1>
+      <p class="lead">Choose the transformations you need and download a reusable JSON planning file. No dataset is requested, uploaded, or stored.</p>
+    </header>
+
+    <div class="layout">
+      <div class="panel">
+        <fieldset id="rules">
+          <legend>Select cleanup operations</legend>
+          <label><input type="checkbox" value="trim_whitespace" checked><span>Trim leading, trailing, and repeated whitespace</span></label>
+          <label><input type="checkbox" value="normalize_headers"><span>Normalize column headers to snake_case</span></label>
+          <label><input type="checkbox" value="normalize_case"><span>Normalize text casing in selected columns</span></label>
+          <label><input type="checkbox" value="standardize_dates"><span>Standardize parseable dates to ISO 8601</span></label>
+          <label><input type="checkbox" value="standardize_phones"><span>Standardize phone formatting after country selection</span></label>
+          <label><input type="checkbox" value="normalize_empty_values"><span>Map configured empty markers to null</span></label>
+          <label><input type="checkbox" value="remove_exact_duplicates"><span>Remove exact duplicate rows while preserving order</span></label>
+          <label><input type="checkbox" value="remove_empty_rows"><span>Remove rows containing no meaningful values</span></label>
+        </fieldset>
+      </div>
+
+      <section class="panel">
+        <h2>Generated cleanup plan</h2>
+        <pre id="preview" aria-live="polite"></pre>
+        <div class="actions">
+          <button type="button" id="download">Download JSON</button>
+          <button type="button" id="copy">Copy brief</button>
+        </div>
+      </section>
+    </div>
+
+    <div class="note">
+      This planner defines intent, not changed-cell counts. Accurate counts require running each rule against the real dataset and reconciling the output.
+    </div>
+
+    <a class="cta" href="https://contra.com/s/Yo7LOXsW-batch-data-cleanup-and-formatting" rel="nofollow">Have up to 50k rows cleaned for $15 →</a>
+
+    <footer>
+      The paid service includes the cleaned dataset, before/after diff summary, reusable rules file, rule-by-rule changed-cell counts, and a reversible diff.
+    </footer>
+  </main>
+  <script>
+    const boxes=[...document.querySelectorAll('#rules input')];
+    const preview=document.querySelector('#preview');
+    function plan(){
+      return {
+        version:1,
+        input_format:"csv_or_spreadsheet",
+        operations:boxes.filter(box=>box.checked).map(box=>({id:box.value,enabled:true})),
+        validation:["preserve_source","report_changed_cells_per_rule","reconcile_row_count","produce_reversible_diff"]
+      };
+    }
+    function update(){preview.textContent=JSON.stringify(plan(),null,2)}
+    document.querySelector('#rules').addEventListener('change',update);
+    document.querySelector('#download').addEventListener('click',()=>{
+      const blob=new Blob([JSON.stringify(plan(),null,2)+'\n'],{type:'application/json'});
+      const link=document.createElement('a');
+      link.href=URL.createObjectURL(blob);link.download='cleanup-rules.json';link.click();
+      URL.revokeObjectURL(link.href);
+    });
+    document.querySelector('#copy').addEventListener('click',async()=>{
+      const selected=plan().operations.map(item=>item.id).join(', ')||'none selected';
+      await navigator.clipboard.writeText(`Data cleanup requested. Operations: ${selected}. Require changed-cell counts per rule, row-count reconciliation, and a reversible diff.`);
+      document.querySelector('#copy').textContent='Copied';
+    });
+    update();
+  </script>
+</body>
+</html>
