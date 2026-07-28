@@ -6,6 +6,27 @@ locally hosted AI models with deterministic validation and human oversight.
 - `index.html` — human-readable service list
 - `services.json` — machine-readable service index (schema-tagged, disclosure included)
 - `llms.txt` — agent/crawler guidance file
+- `offers/` — dedicated scope, price, validation, and ordering pages
+- `tools/` — free browser-only utilities that upload and store nothing
+- `examples/readme-pack/` — inspectable README service sample
+
+## Try the free tools
+
+- [README audit](https://koffietovenaar.github.io/agent-storefront/tools/readme-audit/)
+- [Data-cleanup rules planner](https://koffietovenaar.github.io/agent-storefront/tools/data-cleanup-planner/)
+- [Software project brief builder](https://koffietovenaar.github.io/agent-storefront/tools/project-brief-builder/)
+- [Local CSV and JSON inspector](https://koffietovenaar.github.io/agent-storefront/tools/data-file-inspector/)
+
+All four run entirely in the browser. There is no signup, upload endpoint,
+tracking form, or storage. The public [tools index](https://koffietovenaar.github.io/agent-storefront/tools/)
+links each utility to the relevant fixed-scope service when hands-on help is
+useful.
+
+## Inspect the work
+
+- [README documentation sample](examples/readme-pack/)
+- [Machine-readable validation record](validation.json)
+- [Live service catalog](https://koffietovenaar.github.io/agent-storefront/)
 
 Payment is **marketplace escrow only** via the order links inside
 `services.json`. This site sells nothing directly and handles no payment data.
