@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free local CSV and JSON inspector | Koffie Labs</title>
+<meta name="description" content="Inspect CSV or JSON structure, row counts, columns, and common data-shape issues locally in your browser. No upload, signup, or storage.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://koffietovenaar.github.io/agent-storefront/tools/data-file-inspector/">
+<meta property="og:type" content="website"><meta property="og:title" content="Free local CSV and JSON inspector">
+<meta property="og:description" content="Check a data file's basic structure entirely in your browser. Nothing is uploaded or stored.">
+<meta property="og:url" content="https://koffietovenaar.github.io/agent-storefront/tools/data-file-inspector/">
+<meta property="og:image" content="https://koffietovenaar.github.io/agent-storefront/og-koffie-labs.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{color-scheme:dark;--bg:#0b0e14;--card:#131824;--line:#293149;--text:#edf1fa;--muted:#9ca7ba;--a:#5eead4;--b:#818cf8}
+@media(prefers-color-scheme:light){:root{color-scheme:light;--bg:#f7f8fa;--card:#fff;--line:#dce1e9;--text:#171b24;--muted:#5e6878;--a:#0f766e;--b:#4338ca}}
+*{box-sizing:border-box}body{margin:0;padding:24px;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,sans-serif}
+main{max-width:820px;margin:auto}a{color:var(--a)}h1{font-size:clamp(1.75rem,5vw,2.6rem);line-height:1.12;margin-bottom:8px}.muted{color:var(--muted)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:22px;margin-top:22px}
+input{display:block;width:100%;border:1px dashed var(--b);border-radius:10px;padding:18px;background:var(--bg);color:var(--text)}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;min-height:170px;margin:0;color:var(--text)}
+.cta{display:inline-block;background:var(--a);color:var(--bg);font-weight:800;text-decoration:none;border-radius:9px;padding:11px 16px;margin-top:16px}
+footer{margin-top:30px;color:var(--muted);font-size:.85rem}
+</style>
+</head>
+<body><main>
+<a href="../../">← Koffie Labs</a>
+<h1>Local CSV and JSON inspector</h1>
+<p class="muted">Check a file's basic shape before planning a conversion or cleanup. This tool reads the selected file only inside your browser; it makes no network request and stores nothing.</p>
+<p class="muted"><strong>Safety:</strong> avoid opening files containing passwords, secrets, payment details, or unnecessary personal data.</p>
+<section class="panel">
+<h2>Choose a file</h2>
+<label for="file"><strong>Select one .csv or .json file (up to 20 MB)</strong></label>
+<input id="file" type="file" accept=".csv,.json,application/json,text/csv">
+</section>
+<section class="panel" aria-labelledby="result-title">
+<h2 id="result-title">Inspection result</h2>
+<pre id="result">Choose a file to see its size, structure, row or item count, and field names.</pre>
+<a class="cta" href="https://contra.com/s/gELvrsv7-jsoncsvxlsx-conversion-and-cleanup" rel="nofollow">Need it converted? Order the $15 service →</a>
+</section>
+<footer>Free utility from Koffie Labs · AI-assisted delivery, automated validation, and human review · payment only through Contra</footer>
+</main>
+<script>
+const fileInput=document.getElementById("file"),result=document.getElementById("result");
+const formatBytes=n=>n<1024?n+" B":n<1048576?(n/1024).toFixed(1)+" KB":(n/1048576).toFixed(1)+" MB";
+const csvRow=line=>{let fields=[],value="",quoted=false;for(let i=0;i<line.length;i++){const c=line[i];if(c==='"'&&line[i+1]==='"'&&quoted){value+='"';i++;}else if(c==='"'){quoted=!quoted;}else if(c===","&&!quoted){fields.push(value);value="";}else value+=c;}fields.push(value);return fields;};
+fileInput.addEventListener("change",async()=>{
+ const file=fileInput.files[0];if(!file)return;
+ if(file.size>20*1024*1024){result.textContent="File is larger than the 20 MB local-inspection limit.";return;}
+ try{
+  const text=await file.text(),isJson=file.name.toLowerCase().endsWith(".json")||file.type.includes("json");
+  if(isJson){
+   const data=JSON.parse(text),items=Array.isArray(data)?data:[data];
+   const fields=[...new Set(items.slice(0,100).flatMap(item=>item&&typeof item==="object"&&!Array.isArray(item)?Object.keys(item):[]))];
+   result.textContent=["Format: JSON","File size: "+formatBytes(file.size),"Top-level: "+(Array.isArray(data)?"array":"object"),"Items: "+items.length,"Fields observed (first 100 items): "+(fields.join(", ")||"No object fields"),"Status: valid JSON"].join("\n");
+  }else{
+   const lines=text.replace(/\r\n?/g,"\n").split("\n").filter(line=>line.trim()!=="");
+   const header=lines.length?csvRow(lines[0]):[],counts=lines.map(line=>csvRow(line).length),mismatch=counts.filter(n=>n!==header.length).length;
+   result.textContent=["Format: CSV","File size: "+formatBytes(file.size),"Data rows: "+Math.max(0,lines.length-1),"Columns: "+header.length,"Headers: "+(header.join(", ")||"None"),"Rows with a different field count: "+Math.max(0,mismatch-(counts[0]!==header.length?1:0))].join("\n");
+  }
+ }catch(error){result.textContent="Could not inspect this file: "+error.message;}
+});
+</script></body></html>
