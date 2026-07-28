@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Free README audit checklist and score | Koffie Labs</title>
+  <meta name="description" content="Score a repository README against 12 practical documentation checks. Runs entirely in your browser, stores nothing, and requires no signup.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://koffietovenaar.github.io/agent-storefront/tools/readme-audit/">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"README Audit Checklist",
+    "applicationCategory":"DeveloperApplication",
+    "operatingSystem":"Any",
+    "url":"https://koffietovenaar.github.io/agent-storefront/tools/readme-audit/",
+    "description":"A private, browser-only checklist that scores repository README coverage.",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+  }
+  </script>
+  <style>
+    :root{--bg:#0b0e14;--card:#131824;--line:#263049;--text:#eef1f7;--muted:#9aa5b9;--accent:#5eead4;--accent2:#818cf8}
+    @media(prefers-color-scheme:light){:root{--bg:#f7f8fa;--card:#fff;--line:#dfe4ec;--text:#161b26;--muted:#5f6978;--accent:#0f766e;--accent2:#4338ca}}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}
+    main{width:min(780px,calc(100% - 32px));margin:auto;padding:34px 0 72px}
+    a{color:var(--accent)}nav{display:flex;justify-content:space-between;margin-bottom:42px}nav a{text-decoration:none}.brand{font-weight:850;color:var(--text)}
+    .eyebrow{color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:.76rem}
+    h1{font-size:clamp(2rem,7vw,3.6rem);line-height:1.04;letter-spacing:-.045em;margin:.4rem 0 1rem}
+    .lead,.privacy{color:var(--muted)}.privacy{font-size:.88rem}
+    .score{display:flex;align-items:center;justify-content:space-between;gap:20px;border:1px solid var(--line);background:var(--card);border-radius:16px;padding:20px;margin:28px 0}
+    .score output{font-size:2.4rem;font-weight:900;color:var(--accent)}progress{width:100%;height:12px;accent-color:var(--accent)}
+    fieldset{border:0;padding:0;margin:0;display:grid;gap:10px}legend{font-weight:800;margin-bottom:12px}
+    label{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);background:var(--card);border-radius:11px;padding:13px 14px;cursor:pointer}
+    input{margin-top:.35rem;accent-color:var(--accent)}label strong{display:block}label span{color:var(--muted);font-size:.86rem}
+    .result{margin:26px 0;border-left:3px solid var(--accent2);padding:4px 0 4px 15px}.result strong{color:var(--accent2)}
+    .cta{display:inline-block;background:var(--accent);color:var(--bg);font-weight:850;text-decoration:none;border-radius:10px;padding:12px 18px}
+    .cta:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--accent2);outline-offset:3px}
+    footer{margin-top:54px;border-top:1px solid var(--line);padding-top:20px;color:var(--muted);font-size:.84rem}
+  </style>
+</head>
+<body>
+  <main>
+    <nav><a class="brand" href="../../">Koffie Labs</a><a href="../../offers/readme-template/">README service</a></nav>
+    <header>
+      <div class="eyebrow">Free browser-only tool</div>
+      <h1>README audit checklist</h1>
+      <p class="lead">Check what your repository documentation already covers. Your selections stay in this browser tab; nothing is uploaded or stored.</p>
+    </header>
+
+    <div class="score">
+      <div>
+        <strong>Coverage score</strong>
+        <progress id="bar" max="12" value="0">0 of 12</progress>
+      </div>
+      <output id="score" aria-live="polite">0/12</output>
+    </div>
+
+    <fieldset id="audit">
+      <legend>Mark every item your current README handles clearly</legend>
+      <label><input type="checkbox"><span><strong>One-sentence purpose</strong>A new visitor can tell what the project does without reading further.</span></label>
+      <label><input type="checkbox"><span><strong>Current prerequisites</strong>Runtime, platform, and version requirements are explicit.</span></label>
+      <label><input type="checkbox"><span><strong>Copyable installation</strong>Install commands work from a clean environment.</span></label>
+      <label><input type="checkbox"><span><strong>Minimal working example</strong>The shortest successful path is shown end to end.</span></label>
+      <label><input type="checkbox"><span><strong>Configuration reference</strong>Required variables and safe example values are documented.</span></label>
+      <label><input type="checkbox"><span><strong>Input and output example</strong>Users can see the expected data shape or behavior.</span></label>
+      <label><input type="checkbox"><span><strong>Error guidance</strong>Common failures have specific recovery steps.</span></label>
+      <label><input type="checkbox"><span><strong>Test command</strong>The documented test command has been run successfully.</span></label>
+      <label><input type="checkbox"><span><strong>Project structure</strong>Important folders and entry points are explained.</span></label>
+      <label><input type="checkbox"><span><strong>Contribution path</strong>Contributing guidance and review expectations are linked.</span></label>
+      <label><input type="checkbox"><span><strong>License and ownership</strong>Reuse terms and maintainership are unambiguous.</span></label>
+      <label><input type="checkbox"><span><strong>Freshness signal</strong>Examples, commands, and links match the current repository.</span></label>
+    </fieldset>
+
+    <div class="result" id="result" aria-live="polite">
+      <strong>Start with the user journey.</strong>
+      <p>Purpose, installation, and one working example usually produce the largest immediate improvement.</p>
+    </div>
+
+    <a class="cta" href="https://contra.com/s/RcvNckBk-readme-and-repository-documentation-pack" rel="nofollow">Have the full pack built for $18 →</a>
+
+    <footer>
+      This checklist is educational, not a certification. The paid pack includes a README, CONTRIBUTING skeleton, issue/PR templates, and execution of runnable README commands.
+    </footer>
+  </main>
+  <script>
+    const boxes=[...document.querySelectorAll('input[type="checkbox"]')];
+    const score=document.querySelector('#score');
+    const bar=document.querySelector('#bar');
+    const result=document.querySelector('#result');
+    const messages=[
+      ['Start with the user journey.','Purpose, installation, and one working example usually produce the largest immediate improvement.'],
+      ['The foundation is forming.','Next, document configuration, expected output, and failure recovery.'],
+      ['Useful, but still fragile.','Run every command from a clean environment and remove stale examples or links.'],
+      ['Strong practical coverage.','Finish contribution, ownership, and maintenance details so collaborators can act confidently.'],
+      ['Excellent coverage.','Keep it trustworthy by testing the documented commands whenever the repository changes.']
+    ];
+    function update(){
+      const count=boxes.filter(box=>box.checked).length;
+      const band=count<3?0:count<6?1:count<9?2:count<12?3:4;
+      score.value=`${count}/12`;
+      bar.value=count;
+      bar.textContent=`${count} of 12`;
+      result.innerHTML=`<strong>${messages[band][0]}</strong><p>${messages[band][1]}</p>`;
+    }
+    document.querySelector('#audit').addEventListener('change',update);
+  </script>
+</body>
+</html>
