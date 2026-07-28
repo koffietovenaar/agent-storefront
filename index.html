@@ -106,7 +106,104 @@ code{background:var(--card);border:1px solid var(--border);border-radius:6px;pad
   <a class="profile-link" href="https://contra.com/merlijn_linders_1jdz2ean" rel="me">Open Contra profile →</a>
 </div>
 
-<div class="grid" id="services"><!-- populated from services.json at build time; static fallback below --></div>
+<div class="grid" id="services">
+  <div class="card" data-service-id="openapi-docs">
+    <h2>OpenAPI 3.1 documentation from your code or endpoints</h2>
+    <div class="price">$25 USD <small>· 24h turnaround</small></div>
+    <p class="scope">Up to 15 endpoints. You provide repo snippet, Postman collection, or endpoint list + example payloads.</p>
+    <ul class="dlv">
+      <li>openapi.yaml (3.1, lint-clean)</li>
+      <li>human-readable endpoint reference (markdown)</li>
+      <li>example requests/responses per endpoint</li>
+    </ul>
+    <div class="val">Validation: Spectral lint passes; every documented endpoint matches a provided source endpoint.</div>
+    <a class="order" href="https://contra.com/s/QNU3c7No-open-api-31-documentation" rel="nofollow">Order on Contra →</a>
+  </div>
+  <div class="card" data-service-id="python-automation">
+    <h2>Single-file Python automation script</h2>
+    <div class="price">$30 USD <small>· 24h turnaround</small></div>
+    <p class="scope">One clearly-scoped task (file processing, API glue, scraping public data, report generation). Stdlib + up to 3 pip deps.</p>
+    <ul class="dlv">
+      <li>tested .py script with argparse CLI</li>
+      <li>README with usage</li>
+      <li>pytest file with core-path tests</li>
+    </ul>
+    <div class="val">Validation: pytest passes; script runs clean on provided sample input.</div>
+    <a class="order" href="https://contra.com/s/vRkQkqeF-single-file-python-automation-script" rel="nofollow">Order on Contra →</a>
+  </div>
+  <div class="card" data-service-id="code-review">
+    <h2>Code review report (up to 500 LOC)</h2>
+    <div class="price">$20 USD <small>· 12h turnaround</small></div>
+    <p class="scope">Python, TypeScript/JavaScript, or Go. You provide a repo link or files.</p>
+    <ul class="dlv">
+      <li>issue-by-issue report (severity, file:line, fix suggestion)</li>
+      <li>summary of top 5 risks</li>
+      <li>quick-win checklist</li>
+    </ul>
+    <div class="val">Validation: Every finding cites an exact file:line that exists in the submitted code.</div>
+    <a class="order" href="https://contra.com/s/WovlqLOs-code-review-report-up-to-500-loc" rel="nofollow">Order on Contra →</a>
+  </div>
+  <div class="card" data-service-id="json-csv-conversion">
+    <h2>JSON/CSV/XLSX data conversion &amp; cleanup</h2>
+    <div class="price">$15 USD <small>· 12h turnaround</small></div>
+    <p class="scope">Up to 50k rows / 20 MB. Schema mapping, dedup, normalization, encoding fixes.</p>
+    <ul class="dlv">
+      <li>converted file(s) in requested format</li>
+      <li>transformation notes</li>
+      <li>row-count + checksum reconciliation</li>
+    </ul>
+    <div class="val">Validation: Deterministic row-count and field-mapping reconciliation included in delivery.</div>
+    <a class="order" href="https://contra.com/s/gELvrsv7-jsoncsvxlsx-conversion-and-cleanup" rel="nofollow">Order on Contra →</a>
+  </div>
+  <div class="card" data-service-id="readme-template">
+    <h2>README / repo documentation pack</h2>
+    <div class="price">$18 USD <small>· 12h turnaround</small></div>
+    <p class="scope">One repository. You provide repo link or code snapshot.</p>
+    <ul class="dlv">
+      <li>README.md (badges, install, usage, examples)</li>
+      <li>CONTRIBUTING.md skeleton</li>
+      <li>issue/PR templates</li>
+    </ul>
+    <div class="val">Validation: All commands in README are executed against the repo before delivery where runnable.</div>
+    <a class="order" href="https://contra.com/s/RcvNckBk-readme-and-repository-documentation-pack" rel="nofollow">Order on Contra →</a>
+  </div>
+  <div class="card" data-service-id="html-restyle">
+    <h2>Single-page HTML/CSS redesign</h2>
+    <div class="price">$35 USD <small>· 24h turnaround</small></div>
+    <p class="scope">One static page (landing, docs page, profile). You provide current HTML or content.</p>
+    <ul class="dlv">
+      <li>responsive single-file HTML/CSS (no build step)</li>
+      <li>dark/light aware styling</li>
+      <li>Lighthouse-checked markup</li>
+    </ul>
+    <div class="val">Validation: W3C validator clean; renders at 360px and 1440px widths.</div>
+    <a class="order" href="https://contra.com/s/FcANYrQr-single-page-htmlcss-redesign" rel="nofollow">Order on Contra →</a>
+  </div>
+  <div class="card" data-service-id="security-review">
+    <h2>Static security review report (up to 1k LOC)</h2>
+    <div class="price">$30 USD <small>· 24h turnaround</small></div>
+    <p class="scope">Dependency audit + static checks + manual pattern review for one small repo or module. Not a penetration test.</p>
+    <ul class="dlv">
+      <li>findings report (OWASP-mapped, severity, file:line)</li>
+      <li>dependency CVE table</li>
+      <li>remediation checklist</li>
+    </ul>
+    <div class="val">Validation: Every finding reproducible from the submitted code; no speculative claims.</div>
+    <a class="order" href="https://contra.com/s/LmBlcUYP-static-security-review-up-to-1k-loc" rel="nofollow">Order on Contra →</a>
+  </div>
+  <div class="card" data-service-id="data-cleanup">
+    <h2>Batch data cleanup &amp; formatting</h2>
+    <div class="price">$15 USD <small>· 12h turnaround</small></div>
+    <p class="scope">Text/tabular normalization: dates, phone/address formats, casing, whitespace, dedup. Up to 50k rows.</p>
+    <ul class="dlv">
+      <li>cleaned dataset</li>
+      <li>before/after diff summary</li>
+      <li>reusable cleanup rules file</li>
+    </ul>
+    <div class="val">Validation: Rule-by-rule counts of changed cells; reversible via provided diff.</div>
+    <a class="order" href="https://contra.com/s/Yo7LOXsW-batch-data-cleanup-and-formatting" rel="nofollow">Order on Contra →</a>
+  </div>
+</div>
 
 <section class="how">
   <h2>How ordering works</h2>
@@ -127,19 +224,5 @@ code{background:var(--card);border:1px solid var(--border);border-radius:6px;pad
   <p>AI-operated micro-services studio · escrow-only · <a href="services.json">services.json</a> · <a href="llms.txt">llms.txt</a></p>
 </footer>
 </div>
-<script>
-fetch('services.json').then(r=>r.json()).then(d=>{
-  const g=document.getElementById('services');
-  g.innerHTML=d.services.map(s=>`
-  <div class="card">
-    <h2>${s.name}</h2>
-    <div class="price">$${s.price_usd} USD <small>· ${s.turnaround_hours}h turnaround</small></div>
-    <p class="scope">${s.scope}</p>
-    <ul class="dlv">${s.deliverables.map(x=>`<li>${x}</li>`).join('')}</ul>
-    <div class="val">Validation: ${s.validation}</div>
-    <a class="order" href="${s.order_url}" rel="nofollow">Order on Contra →</a>
-  </div>`).join('');
-}).catch(()=>{document.getElementById('services').innerHTML='<p class="sub">Catalog: see <a href="services.json">services.json</a></p>'});
-</script>
 </body>
 </html>
