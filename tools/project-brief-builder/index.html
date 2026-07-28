@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free software project brief builder | Koffie Labs</title>
+<meta name="description" content="Turn a small software task into a clear, copy-ready project brief. Runs entirely in your browser with no signup, upload, or storage.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://koffietovenaar.github.io/agent-storefront/tools/project-brief-builder/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free software project brief builder">
+<meta property="og:description" content="Create a clear, copy-ready brief for a fixed-scope software task. Nothing is uploaded or stored.">
+<meta property="og:url" content="https://koffietovenaar.github.io/agent-storefront/tools/project-brief-builder/">
+<meta property="og:image" content="https://koffietovenaar.github.io/agent-storefront/og-koffie-labs.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{color-scheme:dark;--bg:#0b0e14;--card:#131824;--line:#283147;--text:#eef2ff;--muted:#9aa5ba;--a:#5eead4;--b:#818cf8}
+@media(prefers-color-scheme:light){:root{color-scheme:light;--bg:#f7f8fa;--card:#fff;--line:#dce1e9;--text:#161a22;--muted:#5e6878;--a:#0f766e;--b:#4338ca}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,sans-serif;padding:24px}
+main{max-width:780px;margin:auto}a{color:var(--a)}h1{font-size:clamp(1.7rem,5vw,2.5rem);line-height:1.15;margin-bottom:8px}.intro,.privacy{color:var(--muted)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:22px;margin-top:22px}
+label{display:block;font-weight:700;margin:15px 0 6px}select,input,textarea{width:100%;border:1px solid var(--line);border-radius:9px;padding:11px;background:var(--bg);color:var(--text);font:inherit}
+textarea{min-height:90px;resize:vertical}button,.order{display:inline-block;border:0;border-radius:9px;padding:11px 16px;background:var(--a);color:var(--bg);font-weight:800;cursor:pointer;text-decoration:none;margin:14px 8px 0 0}
+button.secondary{background:var(--b);color:#fff}#result{min-height:260px;white-space:pre-wrap}footer{margin-top:30px;color:var(--muted);font-size:.85rem}
+</style>
+</head>
+<body>
+<main>
+<a href="../../">← Koffie Labs</a>
+<h1>Software project brief builder</h1>
+<p class="intro">Create a clear, copy-ready brief for one small software task. A better brief makes scope, acceptance, and turnaround easier to agree on.</p>
+<p class="privacy"><strong>Private by design:</strong> this page runs locally in your browser. It sends, uploads, and stores nothing. Do not include passwords, API keys, personal data, or other secrets.</p>
+
+<section class="panel" aria-labelledby="builder-title">
+<h2 id="builder-title">Describe the work</h2>
+<label for="service">Type of task</label>
+<select id="service">
+<option>OpenAPI documentation</option><option>Python automation</option><option>Code review</option>
+<option>JSON, CSV, or XLSX conversion</option><option>README and repository documentation</option>
+<option>Single-page HTML/CSS redesign</option><option>Static security review</option><option>Batch data cleanup</option>
+</select>
+<label for="goal">Desired outcome</label>
+<textarea id="goal" placeholder="Example: Convert our monthly CSV export into the JSON shape used by our reporting tool."></textarea>
+<label for="input">Inputs you can provide</label>
+<textarea id="input" placeholder="Example: one sample CSV, expected JSON example, and field-mapping notes."></textarea>
+<label for="accept">How you will accept the result</label>
+<textarea id="accept" placeholder="Example: row counts match, required fields are present, and the provided sample converts without errors."></textarea>
+<label for="limits">Important limits or exclusions</label>
+<textarea id="limits" placeholder="Example: under 20 MB; no credentials; no production-system access."></textarea>
+<button type="button" id="build">Build brief</button>
+</section>
+
+<section class="panel" aria-labelledby="result-title">
+<h2 id="result-title">Copy-ready brief</h2>
+<textarea id="result" aria-label="Generated project brief" readonly></textarea>
+<button type="button" class="secondary" id="copy">Copy brief</button>
+<a class="order" href="https://contra.com/merlijn_linders_1jdz2ean" rel="nofollow">Choose a service on Contra →</a>
+</section>
+<footer>Free utility from Koffie Labs · AI-assisted work, automated validation, and human review · payment only through Contra</footer>
+</main>
+<script>
+const byId=id=>document.getElementById(id);
+function clean(id,fallback){return byId(id).value.trim()||fallback}
+byId("build").addEventListener("click",()=>{
+  byId("result").value=[
+    "PROJECT BRIEF",
+    "",
+    "Task type: "+byId("service").value,
+    "Desired outcome: "+clean("goal","Not specified yet"),
+    "Inputs available: "+clean("input","To be confirmed"),
+    "Acceptance check: "+clean("accept","To be agreed before work starts"),
+    "Limits / exclusions: "+clean("limits","No credentials, secrets, or production access"),
+    "",
+    "Please confirm the fixed scope, deliverables, validation method, price, and turnaround before starting."
+  ].join("\n");
+});
+byId("copy").addEventListener("click",async()=>{
+  if(!byId("result").value)byId("build").click();
+  await navigator.clipboard.writeText(byId("result").value);
+  byId("copy").textContent="Copied";
+  setTimeout(()=>byId("copy").textContent="Copy brief",1400);
+});
+byId("build").click();
+</script>
+</body>
+</html>
