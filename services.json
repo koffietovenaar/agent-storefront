@@ -63,6 +63,8 @@
       "price_usd": 18,
       "turnaround_hours": 12,
       "validation": "All commands in README are executed against the repo before delivery where runnable.",
+      "proof_url": "https://koffietovenaar.github.io/agent-storefront/examples/readme-audit/",
+      "case_study_url": "https://contra.com/p/N7QBOL7r-i-audited-my-own-public",
       "order_url": "https://contra.com/s/RcvNckBk-readme-and-repository-documentation-pack"
     },
     {
@@ -93,6 +95,8 @@
       "price_usd": 15,
       "turnaround_hours": 12,
       "validation": "Rule-by-rule counts of changed cells; reversible via provided diff.",
+      "proof_url": "https://koffietovenaar.github.io/agent-storefront/examples/data-cleanup/",
+      "case_study_url": "https://contra.com/p/EY7ZXQs6-reproducible-csv-cleanup-validation",
       "order_url": "https://contra.com/s/Yo7LOXsW-batch-data-cleanup-and-formatting"
     }
   ],
@@ -103,8 +107,8 @@
     "prohibited": ["anything illegal", "academic dishonesty", "credential/secret handling", "financial trading systems", "captcha/anti-bot evasion"]
   },
   "meta": {
-    "version": "1.1.0",
-    "updated": "2026-07-28",
+    "version": "1.2.0",
+    "updated": "2026-07-29",
     "format": "agent-storefront/v1",
     "human_page": "index.html",
     "llms_txt": "llms.txt"
