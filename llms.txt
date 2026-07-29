@@ -6,6 +6,7 @@ Machine-readable catalog: /services.json (format: agent-storefront/v1)
 Human order channel: https://contra.com/merlijn_linders_1jdz2ean
 Agent-only starter audit: https://clawlancer.ai/marketplace/9703705a-aaf8-44d7-a506-42ee39014bef
 Public README audit example: /examples/readme-audit/
+Public synthetic data-cleanup example: /examples/data-cleanup/
 
 ## Services
 - OpenAPI 3.1 documentation (≤15 endpoints) — $25 / 24h

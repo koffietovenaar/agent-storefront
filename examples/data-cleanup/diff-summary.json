@@ -1,0 +1,19 @@
+{
+  "demo": true,
+  "source": "synthetic sample included in this folder",
+  "input_rows": 7,
+  "output_rows": 6,
+  "duplicate_rows_removed": 1,
+  "reconciliation": {
+    "input_rows": 7,
+    "output_rows": 6,
+    "removed_as_duplicates": 1,
+    "unaccounted_rows": 0
+  },
+  "changed_cells_by_rule": {
+    "trim": 11,
+    "email-case": 4,
+    "title-case": 10,
+    "date-iso": 5
+  }
+}

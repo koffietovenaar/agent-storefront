@@ -1,0 +1,7 @@
+id,name,email,signup_date,city
+1,"Alice Van Dijk","alice@example.com","2026-07-01","Amsterdam"
+2,"Bob Smit","bob.smit@example.com","2026-07-01","Rotterdam"
+3,"Clara De Vries","clara@example.com","2026-07-02","Utrecht"
+4,"Daan Jansen","daan@example.com","2026-07-02","Eindhoven"
+5,"Eva Bakker","eva@example.com","2026-07-03","Groningen"
+7,"Finn De Boer","finn@example.com","2026-07-04","Maastricht"

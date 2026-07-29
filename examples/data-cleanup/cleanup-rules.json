@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "input": {
+    "format": "csv",
+    "encoding": "utf-8",
+    "deduplicate_by": ["email"]
+  },
+  "rules": [
+    {"id": "trim", "operation": "trim_whitespace", "columns": ["name", "email", "city"]},
+    {"id": "email-case", "operation": "lowercase", "columns": ["email"]},
+    {"id": "title-case", "operation": "title_case", "columns": ["name", "city"]},
+    {"id": "date-iso", "operation": "normalize_date", "columns": ["signup_date"], "output": "YYYY-MM-DD"}
+  ],
+  "deduplication": {
+    "keep": "first",
+    "key": ["email"],
+    "applied_after_normalization": true
+  }
+}
