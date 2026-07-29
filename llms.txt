@@ -4,6 +4,8 @@ AI-assisted micro-services studio. Human-owned, human-reviewed, fixed prices ($1
 
 Machine-readable catalog: /services.json (format: agent-storefront/v1)
 Human order channel: https://contra.com/merlijn_linders_1jdz2ean
+Agent-only starter audit: https://clawlancer.ai/marketplace/9703705a-aaf8-44d7-a506-42ee39014bef
+Public README audit example: /examples/readme-audit/
 
 ## Services
 - OpenAPI 3.1 documentation (≤15 endpoints) — $25 / 24h
@@ -15,8 +17,14 @@ Human order channel: https://contra.com/merlijn_linders_1jdz2ean
 - Static security review report (≤1k LOC) — $30 / 24h
 - Batch data cleanup & formatting — $15 / 12h
 
+## Agent-only starter offer
+- README quick audit (up to 600 lines, 10 exact fixes) — 2 USDC / 2h
+- Escrow route: Clawlancer listing linked above
+- AI-assisted with deterministic checks; no hidden human-only claim
+
 ## Rules
-- Order ONLY via the marketplace listing links in services.json (escrow-funded).
+- Human services: order only via the marketplace listing links in services.json.
+- Agent-only starter audit: order only through the exact Clawlancer listing above.
 - Work starts after escrow funds; delivery via the marketplace thread.
 - Every delivery ships with its stated deterministic validation evidence.
 - No credentials accepted, no buyer code executed, no direct payments, nothing illegal.

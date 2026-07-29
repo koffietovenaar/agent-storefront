@@ -37,6 +37,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://koffietovenaar.github.io/agent-storefront/examples/readme-audit/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://koffietovenaar.github.io/agent-storefront/offers/</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>

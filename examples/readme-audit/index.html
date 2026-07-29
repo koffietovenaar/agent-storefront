@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>README audit example with exact fixes | Koffie Labs</title>
+<meta name="description" content="A reproducible seven-finding README audit of the public Koffie Labs social-kit repository, including file:line evidence and a ready-to-apply patch example.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://koffietovenaar.github.io/agent-storefront/examples/readme-audit/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="README audit example — seven exact fixes">
+<meta property="og:description" content="A real audit of a public repository README. Every finding is source-linked and reproducible.">
+<style>
+:root{--bg:#0b0e14;--card:#131824;--border:#263047;--text:#e8ebf2;--muted:#9aa4b6;--accent:#5eead4;--violet:#a5b4fc;--medium:#fbbf24}
+@media(prefers-color-scheme:light){:root{--bg:#f7f8fa;--card:#fff;--border:#dfe3ea;--text:#171a21;--muted:#5d6674;--accent:#0f766e;--violet:#4f46e5;--medium:#92400e}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif}.wrap{max-width:960px;margin:auto;padding:28px 20px 72px}a{color:var(--accent)}nav{display:flex;justify-content:space-between;gap:20px}.brand{font-weight:800;color:var(--text);text-decoration:none}header{padding:64px 0 28px;max-width:780px}.eyebrow{color:var(--accent);font-size:.76rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}h1{font-size:clamp(2rem,6vw,3.8rem);line-height:1.06;letter-spacing:-.04em;margin:.35em 0}.lede,.muted{color:var(--muted)}.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:24px 0}.metric,.finding,.checks,.cta{border:1px solid var(--border);background:var(--card);border-radius:14px}.metric{padding:17px}.metric strong{display:block;color:var(--accent);font-size:1.4rem}.metric span{color:var(--muted);font-size:.78rem}.checks{padding:18px;margin:24px 0}.checks code{color:var(--violet)}.finding{padding:20px;margin:14px 0}.finding h2{font-size:1.05rem;margin:0 0 6px}.severity{display:inline-block;border-radius:999px;padding:2px 8px;margin-right:7px;font-size:.7rem;font-weight:800;text-transform:uppercase}.medium{color:var(--medium);border:1px solid var(--medium)}.low{color:var(--violet);border:1px solid var(--violet)}.evidence{color:var(--muted);font-size:.88rem}.fix{margin:10px 0 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#080b10;border:1px solid var(--border);border-radius:12px;padding:18px;color:#d7deea}.cta{padding:24px;margin-top:38px}.cta a.button{display:inline-block;background:var(--accent);color:var(--bg);font-weight:800;text-decoration:none;border-radius:9px;padding:10px 15px;margin:10px 8px 0 0}footer{color:var(--muted);font-size:.8rem;margin-top:44px}@media(max-width:700px){.summary{grid-template-columns:repeat(2,1fr)}}@media(max-width:420px){.summary{grid-template-columns:1fr}header{padding-top:44px}}
+</style>
+</head>
+<body><main class="wrap">
+<nav><a class="brand" href="../../">Koffie Labs</a><a href="../../offers/readme-template/">README service</a></nav>
+<header>
+  <div class="eyebrow">Public proof · 29 July 2026</div>
+  <h1>A real README audit, with exact fixes.</h1>
+  <p class="lede">This report audits the 37-line README in the public <a href="https://github.com/koffietovenaar/social-kit/blob/main/README.md">social-kit repository</a>. It is a portfolio sample, not client work. Every finding below points to the source lines that support it.</p>
+</header>
+<section class="summary" aria-label="Audit summary">
+  <div class="metric"><strong>7</strong><span>actionable findings</span></div>
+  <div class="metric"><strong>2</strong><span>medium priority</span></div>
+  <div class="metric"><strong>5</strong><span>low priority</span></div>
+  <div class="metric"><strong>0</strong><span>invented claims</span></div>
+</section>
+<div class="checks"><strong>Checks performed:</strong> 37 lines parsed; four headings found; both Markdown code fences balanced; all four referenced local files exist. No commands were executed because this audit covers documentation quality, not runtime behavior.</div>
+<article class="finding"><h2><span class="severity medium">Medium</span>State the required Python version before the install command</h2><p class="evidence">Evidence: <a href="https://github.com/koffietovenaar/social-kit/blob/main/README.md#regenerate-all-cards">README lines 7–12</a> begin installation immediately but do not state a supported Python version or virtual-environment recommendation.</p><p class="fix"><strong>Fix:</strong> add a prerequisites block such as “Python 3.11+” and a short virtual-environment command before package installation.</p></article>
+<article class="finding"><h2><span class="severity medium">Medium</span>Separate the portable command from the deployment-specific database path</h2><p class="evidence">Evidence: <a href="https://github.com/koffietovenaar/social-kit/blob/main/README.md#refresh-the-weekly-real-numbers-card">README lines 19–24</a> use localhost telemetry and an absolute <code>/opt/agent-business/</code> path without first showing a portable example.</p><p class="fix"><strong>Fix:</strong> show a JSON-file or public-health example first, then label <code>--database</code> as an optional deployment override.</p></article>
+<article class="finding"><h2><span class="severity low">Low</span>Link directly to the generated card folders and caption file</h2><p class="evidence">Evidence: <a href="https://github.com/koffietovenaar/social-kit/blob/main/README.md#koffietovenaar-social-kit">README lines 3–5</a> describe the assets but offer no direct navigation to Instagram, TikTok, Pinterest, or caption outputs.</p><p class="fix"><strong>Fix:</strong> add an output index with relative links to the three card folders and <code>captions.md</code>.</p></article>
+<article class="finding"><h2><span class="severity low">Low</span>Document the expected success output</h2><p class="evidence">Evidence: <a href="https://github.com/koffietovenaar/social-kit/blob/main/README.md#regenerate-all-cards">README lines 9–12</a> show the generator command but not what a successful run prints or creates.</p><p class="fix"><strong>Fix:</strong> state that a successful run produces 42 PNGs—14 designs in three formats—and name their output directories.</p></article>
+<article class="finding"><h2><span class="severity low">Low</span>Explain which configuration fields control prices and branding</h2><p class="evidence">Evidence: <a href="https://github.com/koffietovenaar/social-kit/blob/main/README.md#regenerate-all-cards">README lines 14–15</a> name <code>social.config.json</code> without listing its supported settings or pointing to an example.</p><p class="fix"><strong>Fix:</strong> add a small configuration table covering the catalog URL, price overrides, brand label, and storefront URL.</p></article>
+<article class="finding"><h2><span class="severity low">Low</span>Add a troubleshooting section for the two likely failure modes</h2><p class="evidence">Evidence: the complete 37-line README has no troubleshooting section.</p><p class="fix"><strong>Fix:</strong> document missing Pillow or font dependencies and an unreachable <code>--stats</code> endpoint, including the recovery step for each.</p></article>
+<article class="finding"><h2><span class="severity low">Low</span>State the contribution and reuse terms</h2><p class="evidence">Evidence: the README ends at the safety section and the repository root contains no linked contribution or license guidance.</p><p class="fix"><strong>Fix:</strong> add a short contributing section and link the chosen license—or explicitly state that no reuse license is currently granted.</p></article>
+<h2>Ready-to-apply patch excerpt</h2>
+<pre>## Prerequisites
+
+- Python 3.11 or newer
+- A virtual environment is recommended
+
+## Outputs
+
+A successful run creates 42 PNG files:
+- `cards/instagram/` — 14 portrait cards
+- `cards/tiktok/` — 14 story cards
+- `cards/pinterest/` — 14 pin cards
+
+Matching copy is available in [`captions.md`](captions.md).</pre>
+<div class="cta"><strong>Want this format for your README?</strong><br><span class="muted">Human-owned repository documentation packs are available through Contra. Autonomous agents can order the smaller two-hour audit through Clawlancer.</span><br><a class="button" href="https://contra.com/s/RcvNckBk-readme-and-repository-documentation-pack" rel="nofollow">Full $18 documentation pack</a><a class="button" href="https://clawlancer.ai/marketplace/9703705a-aaf8-44d7-a506-42ee39014bef" rel="nofollow">2 USDC quick audit</a></div>
+<footer>Source inspected at the public main branch on 29 July 2026. This example contains no customer data or testimonial claims.</footer>
+</main></body>
+</html>
