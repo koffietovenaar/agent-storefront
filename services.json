@@ -24,6 +24,7 @@
       "turnaround_hours": 24,
       "validation": "Spectral lint passes; every documented endpoint matches a provided source endpoint.",
       "proof_url": "https://koffietovenaar.github.io/agent-storefront/examples/openapi-docs/",
+      "case_study_url": "https://contra.com/p/lOOcssbe-lint-clean-open-api-31-documentation",
       "order_url": "https://contra.com/s/QNU3c7No-open-api-31-documentation"
     },
     {
