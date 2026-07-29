@@ -1,0 +1,22 @@
+[
+  {
+    "order": {"id": "o-1001", "total": 19.5, "paid": true},
+    "customer": {"name": "Ada Lovelace", "email": "ADA@EXAMPLE.COM"},
+    "tags": ["new", "priority"]
+  },
+  {
+    "order": {"id": "o-1002", "total": 0, "paid": false},
+    "customer": {"name": "Bob Stone"},
+    "tags": []
+  },
+  {
+    "order": {"id": "o-1003", "total": 125, "paid": true},
+    "customer": {"name": "Chloë de Vries", "email": "chloe@example.com"},
+    "tags": ["renewal"]
+  },
+  {
+    "order": {"id": "o-1004", "total": 8.75, "paid": true},
+    "customer": {"name": "Smith, Alice", "email": "ALICE.SMITH@EXAMPLE.COM"},
+    "tags": ["gift", "follow-up"]
+  }
+]

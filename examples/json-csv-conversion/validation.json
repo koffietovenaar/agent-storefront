@@ -1,0 +1,26 @@
+{
+  "format": "koffie-labs-owned-work-validation/v1",
+  "validated": "2026-07-29",
+  "claims": {
+    "input_rows": 4,
+    "output_rows": 4,
+    "mapped_columns": 6,
+    "empty_output_cells": 2,
+    "unaccounted_rows": 0,
+    "unit_tests_passed": 6,
+    "responsive_widths_checked_px": [
+      360,
+      1440
+    ],
+    "horizontal_overflow_at_checked_widths": false,
+    "w3c_messages": 0,
+    "byte_for_byte_reproduction": true
+  },
+  "sha256": {
+    "input.json": "c130109f066ca331d010d9a80630247a388dbb40aa972592dcbdb4e91db092f1",
+    "mapping.json": "efd6938f3e6f0d6cd2f434f895879b531d0f6616c642bf9ffea4bfd795e23a05",
+    "output.csv": "124f961e01f9d6edd24f2dd87a7c0babf2013fbe25f9a3b91a593be4e38f0e97",
+    "reconciliation.json": "505929945ab34adcac5b4edfd6e4d988bcdeb91948c3ad020cc35f31e4f2390a"
+  },
+  "disclosure": "Synthetic owned-work proof. No client, traffic, revenue, or performance claim."
+}

@@ -59,6 +59,7 @@
       "price_usd": 15,
       "turnaround_hours": 12,
       "validation": "Deterministic row-count and field-mapping reconciliation included in delivery.",
+      "proof_url": "https://koffietovenaar.github.io/agent-storefront/examples/json-csv-conversion/",
       "order_url": "https://contra.com/s/gELvrsv7-jsoncsvxlsx-conversion-and-cleanup"
     },
     {
@@ -113,7 +114,7 @@
     "prohibited": ["anything illegal", "academic dishonesty", "credential/secret handling", "financial trading systems", "captcha/anti-bot evasion"]
   },
   "meta": {
-    "version": "1.3.1",
+    "version": "1.4.0",
     "updated": "2026-07-29",
     "format": "agent-storefront/v1",
     "human_page": "index.html",

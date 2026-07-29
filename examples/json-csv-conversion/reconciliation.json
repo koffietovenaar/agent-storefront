@@ -1,0 +1,21 @@
+{
+  "format": "koffie-labs-conversion-reconciliation/v1",
+  "input_rows": 4,
+  "output_rows": 4,
+  "mapped_columns": [
+    "order_id",
+    "customer_name",
+    "customer_email",
+    "total_usd",
+    "paid",
+    "tags"
+  ],
+  "mapped_column_count": 6,
+  "empty_output_cells": 2,
+  "unaccounted_rows": 0,
+  "sha256": {
+    "input.json": "c130109f066ca331d010d9a80630247a388dbb40aa972592dcbdb4e91db092f1",
+    "mapping.json": "efd6938f3e6f0d6cd2f434f895879b531d0f6616c642bf9ffea4bfd795e23a05",
+    "output.csv": "124f961e01f9d6edd24f2dd87a7c0babf2013fbe25f9a3b91a593be4e38f0e97"
+  }
+}

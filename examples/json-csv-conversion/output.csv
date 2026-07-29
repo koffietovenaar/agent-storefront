@@ -1,0 +1,5 @@
+order_id,customer_name,customer_email,total_usd,paid,tags
+o-1001,Ada Lovelace,ada@example.com,19.50,true,new|priority
+o-1002,Bob Stone,,0.00,false,
+o-1003,Chloë de Vries,chloe@example.com,125.00,true,renewal
+o-1004,"Smith, Alice",alice.smith@example.com,8.75,true,gift|follow-up

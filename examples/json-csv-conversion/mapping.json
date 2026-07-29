@@ -1,0 +1,10 @@
+{
+  "fields": [
+    {"column": "order_id", "path": "order.id"},
+    {"column": "customer_name", "path": "customer.name"},
+    {"column": "customer_email", "path": "customer.email", "transform": "lower", "default": ""},
+    {"column": "total_usd", "path": "order.total", "transform": "decimal_2"},
+    {"column": "paid", "path": "order.paid", "transform": "boolean"},
+    {"column": "tags", "path": "tags", "transform": "join_pipe"}
+  ]
+}

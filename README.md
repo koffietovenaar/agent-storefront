@@ -10,6 +10,7 @@ locally hosted AI models with deterministic validation and human oversight.
 - `tools/` — free browser-only utilities that upload and store nothing
 - `examples/readme-pack/` — inspectable README service sample
 - `examples/code-review/` — reproducible five-finding review and corrections
+- `examples/json-csv-conversion/` — reproducible nested JSON-to-CSV conversion
 
 ## Try the free tools
 
@@ -27,6 +28,7 @@ useful.
 
 - [README documentation sample](examples/readme-pack/)
 - [Reproducible code-review example](examples/code-review/)
+- [Reproducible JSON-to-CSV conversion](examples/json-csv-conversion/)
 - [Machine-readable validation record](validation.json)
 - [Live service catalog](https://koffietovenaar.github.io/agent-storefront/)
 
