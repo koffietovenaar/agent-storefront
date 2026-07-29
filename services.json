@@ -34,6 +34,7 @@
       "turnaround_hours": 24,
       "validation": "pytest passes; script runs clean on provided sample input.",
       "proof_url": "https://koffietovenaar.github.io/agent-storefront/examples/python-automation/",
+      "case_study_url": "https://contra.com/p/glLllYOU-runnable-single-file-python-automation",
       "order_url": "https://contra.com/s/vRkQkqeF-single-file-python-automation-script"
     },
     {
