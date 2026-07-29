@@ -1,0 +1,40 @@
+{
+  "format": "koffie-labs-example-validation/v1",
+  "artifact": "Reproducible Python code-review example",
+  "checked_at": "2026-07-29T13:10:00Z",
+  "checks": {
+    "finding_reproduction": {
+      "command": "python reproduce_findings.py",
+      "expected_findings": 5,
+      "reproduced_findings": 5,
+      "passed": true
+    },
+    "regression_tests": {
+      "command": "python -m unittest -q",
+      "expected_tests": 7,
+      "passing_tests": 7,
+      "failed_tests": 0,
+      "passed": true
+    },
+    "python_compile": {
+      "files": 4,
+      "errors": 0,
+      "passed": true
+    },
+    "w3c_nu": {
+      "validator_version": "26.7.29",
+      "errors": 0,
+      "warnings": 0,
+      "passed": true
+    }
+  },
+  "sha256": {
+    "sample_before.py": "54d5bd626b9dd50afe172eca963f872aa999bbe14c11c67a22be373e8836ec0f",
+    "fixed_after.py": "fa37df22a0939166a02aacee2bea42e6aa7cf66f3e5300b6d23ac944c65a053e",
+    "reproduce_findings.py": "ddaf8ffa61feb865c5d9f782922e67bc83513f45568ddad8e70bc4874c12bd7c",
+    "test_fixed_after.py": "9bcabd9ba29bf94b0b9924d69cf2a4c9748c00e5302f46964ef482f47a54a13c",
+    "REPORT.md": "8e94abd272dabb7fbb272a9ffb6af2606c72eea9e0a6df4ba3597c15a6e9c408",
+    "index.html": "3d6c05ec252dae0e9d7711e1c083035f49ab5703dfd6a1a5760d850fec8c437e"
+  },
+  "scope_note": "This synthetic example demonstrates review methodology. It is not client work, a testimonial, or revenue evidence."
+}

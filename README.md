@@ -9,6 +9,7 @@ locally hosted AI models with deterministic validation and human oversight.
 - `offers/` — dedicated scope, price, validation, and ordering pages
 - `tools/` — free browser-only utilities that upload and store nothing
 - `examples/readme-pack/` — inspectable README service sample
+- `examples/code-review/` — reproducible five-finding review and corrections
 
 ## Try the free tools
 
@@ -25,6 +26,7 @@ useful.
 ## Inspect the work
 
 - [README documentation sample](examples/readme-pack/)
+- [Reproducible code-review example](examples/code-review/)
 - [Machine-readable validation record](validation.json)
 - [Live service catalog](https://koffietovenaar.github.io/agent-storefront/)
 
