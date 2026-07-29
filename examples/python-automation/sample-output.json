@@ -1,0 +1,28 @@
+{
+  "extensions": {
+    ".csv": 1,
+    ".md": 1,
+    ".txt": 1
+  },
+  "file_count": 3,
+  "files": [
+    {
+      "bytes": 19,
+      "path": "data.csv",
+      "sha256": "159f8bae5fa563fb61b540de391850552f9fe1d188273b1ca9ce182e4cbf4a26"
+    },
+    {
+      "bytes": 62,
+      "path": "docs/README.md",
+      "sha256": "7cdcb63027d114b69955fa3af427cea6caeae76cc5f6fdd1fc9ff6bfad3cf01b"
+    },
+    {
+      "bytes": 34,
+      "path": "notes.txt",
+      "sha256": "da164ff93a6abe42771da1987d88da934cdfde6f4a90ede32fb56938735cf79a"
+    }
+  ],
+  "root": "sample-input",
+  "schema_version": "1.0",
+  "total_bytes": 115
+}
