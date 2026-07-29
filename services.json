@@ -48,6 +48,7 @@
       "turnaround_hours": 12,
       "validation": "Every finding cites an exact file:line that exists in the submitted code.",
       "proof_url": "https://koffietovenaar.github.io/agent-storefront/examples/code-review/",
+      "case_study_url": "https://contra.com/p/mNLsbe2N-reproducible-five-finding-python-code-review",
       "order_url": "https://contra.com/s/WovlqLOs-code-review-report-up-to-500-loc"
     },
     {
@@ -112,7 +113,7 @@
     "prohibited": ["anything illegal", "academic dishonesty", "credential/secret handling", "financial trading systems", "captcha/anti-bot evasion"]
   },
   "meta": {
-    "version": "1.3.0",
+    "version": "1.3.1",
     "updated": "2026-07-29",
     "format": "agent-storefront/v1",
     "human_page": "index.html",
