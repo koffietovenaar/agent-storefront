@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>OpenAPI 3.1 documentation proof | Koffie Labs</title>
+  <meta name="description" content="A public OpenAPI 3.1 example with three documented operations, reusable schemas, request and response examples, and Spectral lint evidence.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://koffietovenaar.github.io/agent-storefront/examples/openapi-docs/">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <style>
+    :root{--bg:#0b0e14;--card:#131824;--line:#263049;--text:#eef1f7;--muted:#a9b3c6;--accent:#5eead4;--accent2:#a5b4fc;--code:#090c12}
+    @media(prefers-color-scheme:light){:root{--bg:#f7f8fa;--card:#fff;--line:#dfe4ec;--text:#161b26;--muted:#586273;--accent:#0f766e;--accent2:#4338ca;--code:#eef2f7}}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}
+    main{width:min(980px,calc(100% - 30px));margin:auto;padding:26px 0 70px}a{color:var(--accent)}
+    nav{display:flex;justify-content:space-between;gap:18px;margin-bottom:44px}.brand{font-weight:850;color:var(--text);text-decoration:none}
+    h1{font-size:clamp(2rem,7vw,4rem);line-height:1.02;letter-spacing:-.045em;margin:.35rem 0 1rem;max-width:15ch}
+    h2{margin-top:42px}.eyebrow{color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:.76rem}
+    .lead,.muted{color:var(--muted)}.lead{font-size:1.08rem;max-width:68ch}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0}
+    .stat,.card{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:17px}.stat strong{display:block;color:var(--accent);font-size:1.45rem}
+    .operation{display:grid;grid-template-columns:78px 1fr;gap:14px;align-items:start;border-top:1px solid var(--line);padding:16px 0}
+    .method{font:800 .8rem/1 ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--bg);background:var(--accent);padding:8px;border-radius:7px;text-align:center}
+    pre{overflow:auto;background:var(--code);border:1px solid var(--line);border-radius:12px;padding:16px;color:var(--text);font:14px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace}
+    .downloads{display:flex;flex-wrap:wrap;gap:10px}.button{display:inline-block;border:1px solid var(--line);border-radius:9px;padding:9px 12px;text-decoration:none;font-weight:750}
+    .cta{background:var(--accent);color:var(--bg);border-color:var(--accent)}.note{border-left:3px solid var(--accent2);padding-left:14px}
+    footer{border-top:1px solid var(--line);margin-top:50px;padding-top:20px;color:var(--muted);font-size:.85rem}
+    @media(max-width:680px){.grid{grid-template-columns:repeat(2,1fr)}nav{margin-bottom:30px;font-size:.9rem}h1{max-width:none}.operation{grid-template-columns:68px 1fr}}
+  </style>
+</head>
+<body>
+<main>
+  <nav><a class="brand" href="../../">Koffie Labs</a><a href="../../offers/openapi-docs/">$25 documentation service</a></nav>
+  <div class="eyebrow">Public validation example</div>
+  <h1>A small API, completely documented.</h1>
+  <p class="lead">This owned, synthetic example pairs a machine-readable OpenAPI 3.1 contract with a human-readable reference and copyable requests. It is runnable portfolio proof, not client work.</p>
+
+  <div class="grid">
+    <div class="stat"><strong>3</strong>operations</div>
+    <div class="stat"><strong>4</strong>shared schemas</div>
+    <div class="stat"><strong>5</strong>response examples</div>
+    <div class="stat"><strong>0</strong>lint errors</div>
+  </div>
+
+  <h2>Documented surface</h2>
+  <div class="card">
+    <div class="operation"><span class="method">GET</span><div><strong>/tasks</strong><br><span class="muted">List tasks with an optional status filter.</span></div></div>
+    <div class="operation"><span class="method">POST</span><div><strong>/tasks</strong><br><span class="muted">Create a queued task with validated input.</span></div></div>
+    <div class="operation"><span class="method">GET</span><div><strong>/tasks/{taskId}</strong><br><span class="muted">Retrieve a task or a structured 404 response.</span></div></div>
+  </div>
+
+  <h2>Reproduce the lint check</h2>
+  <pre><code>spectral lint openapi.yaml --ruleset .spectral.yaml</code></pre>
+  <p class="muted">Validated with Spectral CLI 6.16.2. The contract returns no lint results at error, warning, information, or hint severity.</p>
+
+  <h2>Download and inspect</h2>
+  <div class="downloads">
+    <a class="button" href="openapi.yaml">OpenAPI YAML</a>
+    <a class="button" href="endpoint-reference.md">Endpoint reference</a>
+    <a class="button" href="sample-requests.http">Sample requests</a>
+    <a class="button" href="README.md">Validation runbook</a>
+  </div>
+
+  <div class="card note">
+    <strong>Need this for your own endpoints?</strong>
+    <p class="muted">The fixed-price service covers up to 15 endpoints and includes lint-clean OpenAPI 3.1 YAML, a readable reference, and request and response examples grounded in your supplied source.</p>
+    <a class="button cta" href="https://contra.com/s/QNU3c7No-open-api-31-documentation" rel="nofollow">Order for $25 on Contra &rarr;</a>
+  </div>
+  <footer>AI-assisted demonstration using an owned synthetic API. No client, production, revenue, or performance claim is implied.</footer>
+</main>
+</body>
+</html>

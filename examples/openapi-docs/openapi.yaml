@@ -1,0 +1,252 @@
+openapi: 3.1.0
+info:
+  title: Koffie Tasks API
+  version: 1.0.0
+  summary: A small, synthetic task-tracking API.
+  description: >-
+    Portfolio example for a fixed-scope OpenAPI documentation service. This API
+    is synthetic and does not represent a client or production system.
+  contact:
+    name: Koffie Labs
+    url: https://koffietovenaar.github.io/agent-storefront/
+servers:
+  - url: https://api.example.com/v1
+    description: Illustrative production server
+tags:
+  - name: Tasks
+    description: Create and retrieve task records.
+security: []
+paths:
+  /tasks:
+    get:
+      operationId: listTasks
+      summary: List tasks
+      description: Returns tasks, optionally filtered by status.
+      tags:
+        - Tasks
+      parameters:
+        - name: status
+          in: query
+          required: false
+          description: Return only tasks with this status.
+          schema:
+            type: string
+            enum:
+              - queued
+              - active
+              - done
+      responses:
+        "200":
+          description: Task collection returned successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TaskList"
+              examples:
+                twoTasks:
+                  summary: Two tasks with different states
+                  value:
+                    items:
+                      - id: task_01
+                        title: Validate API contract
+                        status: active
+                        createdAt: "2026-07-29T10:00:00Z"
+                      - id: task_02
+                        title: Publish reference
+                        status: queued
+                        createdAt: "2026-07-29T10:05:00Z"
+                    count: 2
+        default:
+          $ref: "#/components/responses/UnexpectedError"
+    post:
+      operationId: createTask
+      summary: Create a task
+      description: Creates one task in the queued state.
+      tags:
+        - Tasks
+      requestBody:
+        required: true
+        description: Task fields supplied by the caller.
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TaskCreate"
+            examples:
+              documentationTask:
+                summary: Documentation task
+                value:
+                  title: Publish endpoint reference
+      responses:
+        "201":
+          description: Task created successfully.
+          headers:
+            Location:
+              description: Relative URL of the created task.
+              schema:
+                type: string
+                example: /tasks/task_03
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Task"
+              examples:
+                created:
+                  summary: Newly created task
+                  value:
+                    id: task_03
+                    title: Publish endpoint reference
+                    status: queued
+                    createdAt: "2026-07-29T10:10:00Z"
+        "400":
+          description: Request validation failed.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+              examples:
+                missingTitle:
+                  summary: Missing title
+                  value:
+                    code: invalid_request
+                    message: title is required
+        default:
+          $ref: "#/components/responses/UnexpectedError"
+  /tasks/{taskId}:
+    get:
+      operationId: getTask
+      summary: Get a task
+      description: Returns one task by its stable identifier.
+      tags:
+        - Tasks
+      parameters:
+        - $ref: "#/components/parameters/TaskId"
+      responses:
+        "200":
+          description: Task returned successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Task"
+              examples:
+                activeTask:
+                  summary: Active task
+                  value:
+                    id: task_01
+                    title: Validate API contract
+                    status: active
+                    createdAt: "2026-07-29T10:00:00Z"
+        "404":
+          description: No task exists for the supplied identifier.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+              examples:
+                notFound:
+                  summary: Unknown task
+                  value:
+                    code: not_found
+                    message: task was not found
+        default:
+          $ref: "#/components/responses/UnexpectedError"
+components:
+  parameters:
+    TaskId:
+      name: taskId
+      in: path
+      required: true
+      description: Stable task identifier.
+      schema:
+        type: string
+        pattern: "^task_[0-9]{2,}$"
+        example: task_01
+  responses:
+    UnexpectedError:
+      description: An unexpected error occurred.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+          examples:
+            unexpected:
+              summary: Unexpected failure
+              value:
+                code: unexpected_error
+                message: an unexpected error occurred
+  schemas:
+    Task:
+      type: object
+      additionalProperties: false
+      required:
+        - id
+        - title
+        - status
+        - createdAt
+      properties:
+        id:
+          type: string
+          description: Stable task identifier.
+          pattern: "^task_[0-9]{2,}$"
+          example: task_01
+        title:
+          type: string
+          description: Human-readable task title.
+          minLength: 1
+          maxLength: 120
+          example: Validate API contract
+        status:
+          type: string
+          description: Current workflow state.
+          enum:
+            - queued
+            - active
+            - done
+        createdAt:
+          type: string
+          format: date-time
+          description: Time the task was created in RFC 3339 format.
+          example: "2026-07-29T10:00:00Z"
+    TaskCreate:
+      type: object
+      additionalProperties: false
+      required:
+        - title
+      properties:
+        title:
+          type: string
+          description: Human-readable task title.
+          minLength: 1
+          maxLength: 120
+          example: Publish endpoint reference
+    TaskList:
+      type: object
+      additionalProperties: false
+      required:
+        - items
+        - count
+      properties:
+        items:
+          type: array
+          description: Tasks matching the request.
+          items:
+            $ref: "#/components/schemas/Task"
+        count:
+          type: integer
+          description: Number of returned tasks.
+          minimum: 0
+          example: 2
+    Error:
+      type: object
+      additionalProperties: false
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: string
+          description: Machine-readable error code.
+          example: invalid_request
+        message:
+          type: string
+          description: Human-readable explanation.
+          example: title is required

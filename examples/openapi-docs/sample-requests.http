@@ -1,0 +1,15 @@
+### List active tasks
+GET https://api.example.com/v1/tasks?status=active
+Accept: application/json
+
+### Create a task
+POST https://api.example.com/v1/tasks
+Content-Type: application/json
+
+{
+  "title": "Publish endpoint reference"
+}
+
+### Get one task
+GET https://api.example.com/v1/tasks/task_01
+Accept: application/json

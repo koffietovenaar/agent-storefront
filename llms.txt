@@ -8,6 +8,7 @@ Agent-only starter audit: https://clawlancer.ai/marketplace/9703705a-aaf8-44d7-a
 Public README audit example: /examples/readme-audit/
 Public synthetic data-cleanup example: /examples/data-cleanup/
 Public runnable Python automation example: /examples/python-automation/
+Public lint-clean OpenAPI 3.1 example: /examples/openapi-docs/
 
 ## Services
 - OpenAPI 3.1 documentation (≤15 endpoints) — $25 / 24h
